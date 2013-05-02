@@ -1,4 +1,4 @@
-package com.eshsrobotics.the_last_barcode_symphony;
+package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
