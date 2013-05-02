@@ -33,13 +33,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
 
-        for(int i = 0; i < 10; i++)
-        {
-            batch.begin();
-            batch.draw(texture, (float)(16 * Math.sin(i) + 16), 16 * i);
-            batch.draw(texture, (float) (16*Math.sin(i) + 16), 16*i);
-            batch.end();
-        }
+        batch.begin();
+        batch.draw(texture, 16, 16);
+        batch.end();
 
         shape.begin(ShapeType.Filled);
         shape.setColor(0, 0, 0, 1);
