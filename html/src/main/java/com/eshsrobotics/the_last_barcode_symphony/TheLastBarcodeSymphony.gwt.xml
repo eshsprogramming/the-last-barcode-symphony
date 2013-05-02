@@ -1,0 +1,12 @@
+<module rename-to='the_last_barcode_symphony'>
+  <inherits name='com.badlogic.gdx.backends.gdx_backends_gwt' />
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.eshsrobotics.the_last_barcode_symphony.html.TheLastBarcodeSymphonyHtml'/>
+  <set-configuration-property name="gdx.assetpath" value="${asset.input.dir},desktop/assets,../desktop/assets,../../../../desktop/assets/" />
+  <set-configuration-property name="gdx.assetoutputpath" value="${asset.output.dir},the_last_barcode_symphony-1.0-SNAPSHOT,src/main/webapp,./" />
+</module>
