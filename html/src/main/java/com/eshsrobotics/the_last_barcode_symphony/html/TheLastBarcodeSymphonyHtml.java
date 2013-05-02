@@ -6,14 +6,17 @@ import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
 import com.badlogic.gdx.backends.gwt.GwtApplicationConfiguration;
 
-public class TheLastBarcodeSymphonyHtml extends GwtApplication {
-	@Override
-	public ApplicationListener getApplicationListener () {
-		return new TheLastBarcodeSymphony();
-	}
-	
-	@Override
-	public GwtApplicationConfiguration getConfig () {
-		return new GwtApplicationConfiguration(480, 320);
-	}
+public class TheLastBarcodeSymphonyHtml extends GwtApplication
+{
+    @Override
+    public ApplicationListener getApplicationListener()
+    {
+        return new TheLastBarcodeSymphony();
+    }
+
+    @Override
+    public GwtApplicationConfiguration getConfig()
+    {
+        return new GwtApplicationConfiguration(480, 320);
+    }
 }
