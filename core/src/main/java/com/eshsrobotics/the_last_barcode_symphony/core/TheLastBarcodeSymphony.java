@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public class TheLastBarcodeSymphonyGame implements ApplicationListener {
+public class TheLastBarcodeSymphony implements ApplicationListener {
     private SpriteBatch batch;
     private Texture texture;
     private ShapeRenderer shape;
