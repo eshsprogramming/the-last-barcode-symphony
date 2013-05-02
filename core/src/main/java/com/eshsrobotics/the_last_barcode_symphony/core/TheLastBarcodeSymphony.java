@@ -37,6 +37,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         {
             batch.begin();
             batch.draw(texture, (float)(16 * Math.sin(i) + 16), 16 * i);
+            batch.draw(texture, (float) (16*Math.sin(i) + 16), 16*i);
             batch.end();
         }
 
