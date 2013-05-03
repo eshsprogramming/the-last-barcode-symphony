@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
-public class ParallaxBackground {
-   
+public class ParallaxBackground 
+{
    private ParallaxLayer[] layers;
    private Camera camera;
    private SpriteBatch batch;
@@ -18,7 +18,8 @@ public class ParallaxBackground {
     * @param height The screenHeight
     * @param speed A Vector2 attribute to point out the x and y speed
     */
-   public ParallaxBackground(ParallaxLayer[] layers,float width,float height,Vector2 speed){
+   public ParallaxBackground(ParallaxLayer[] layers,float width,float height,Vector2 speed)
+   {
       this.layers = layers;
       this.speed.set(speed);
       camera = new OrthographicCamera(width, height);

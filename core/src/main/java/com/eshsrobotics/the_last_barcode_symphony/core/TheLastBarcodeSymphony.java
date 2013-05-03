@@ -51,6 +51,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     public void dispose()
     {
     }
+    
     @Override
     public void render()
     {
@@ -84,5 +85,4 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     public void resume()
     {
     }
-    
 }
