@@ -37,38 +37,34 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         batch = new SpriteBatch();
         shape = new ShapeRenderer();
         rbg = new ParallaxBackground(new ParallaxLayer[]
-                {
-                    new ParallaxLayer(paraBG,new Vector2(0.01f,0), new Vector2(0, 0)), 
-                    new ParallaxLayer(paraclouds, new Vector2(0.05f,0), new Vector2(0,0)), 
-                    new ParallaxLayer(paraMG, new Vector2(0.1f,0), new Vector2(0,0))
-                },
-                800,
-                600,
-                new Vector2(150,0));
+                                     {
+                                         new ParallaxLayer(paraBG, new Vector2(0.01f, 0), new Vector2(0, 0)),
+                                         new ParallaxLayer(paraclouds, new Vector2(0.05f, 0), new Vector2(0, 0)),
+                                         new ParallaxLayer(paraMG, new Vector2(0.1f, 0), new Vector2(0, 0))
+                                     },
+                                     800,
+                                     600,
+                                     new Vector2(150, 0));
     }
 
     @Override
     public void dispose()
     {
     }
-    
+
     @Override
     public void render()
     {
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
-        
         rbg.render(delta);
-        
         batch.begin();
         batch.draw(texture, 16, 16);
         batch.end();
-
         shape.begin(ShapeType.Filled);
         shape.setColor(255, 0, 0, 1);
         shape.rect(100, 100, 50, 50);
         shape.end();
-        
     }
 
     @Override
