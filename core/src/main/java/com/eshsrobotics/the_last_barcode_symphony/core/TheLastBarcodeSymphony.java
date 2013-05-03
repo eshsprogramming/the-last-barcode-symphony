@@ -95,6 +95,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         if(Gdx.input.isKeyPressed(Keys.NUM_1)) shapeGreen++;
         if(Gdx.input.isKeyPressed(Keys.NUM_2)) shapeBlue++;
         if(Gdx.input.isKeyPressed(Keys.NUM_3)) shapeRed++;
+        if(Gdx.input.isKeyPressed(Keys.NUM_4)) shapeGreen--;
+        if(Gdx.input.isKeyPressed(Keys.NUM_5)) shapeBlue--;
+        if(Gdx.input.isKeyPressed(Keys.NUM_6)) shapeRed--;
     }
 
     @Override
