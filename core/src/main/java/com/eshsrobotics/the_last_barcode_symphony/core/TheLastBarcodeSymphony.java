@@ -30,9 +30,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     int shapeX = 100;
     int shapeY = 100;
 
-    int shapeRed = 0;
-    int shapeGreen = 0;
-    int shapeBlue = 0;
+    float shapeRed = 0;
+    float shapeGreen = 0;
+    float shapeBlue = 0;
 
     @Override
     public void create()
@@ -92,12 +92,61 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         if(Gdx.input.isKeyPressed(Keys.DPAD_RIGHT)) shapeX = shapeX + 3;
 
         //Poorly controls color, will be fixed in future. Use numbers 1-3 to control
-        if(Gdx.input.isKeyPressed(Keys.NUM_1)) shapeGreen = 1;
-        if(Gdx.input.isKeyPressed(Keys.NUM_2)) shapeBlue = 1;
-        if(Gdx.input.isKeyPressed(Keys.NUM_3)) shapeRed = 1;
-        if(Gdx.input.isKeyPressed(Keys.NUM_4)) shapeGreen = 0;
-        if(Gdx.input.isKeyPressed(Keys.NUM_5)) shapeBlue = 0;
-        if(Gdx.input.isKeyPressed(Keys.NUM_6)) shapeRed = 0;
+        if(Gdx.input.isKeyPressed(Keys.NUM_1)) 
+            {
+                shapeGreen = shapeGreen + 0.01f;
+                float diff = 1-shapeGreen;
+                while(shapeGreen > 1)
+                {
+                    shapeGreen = shapeGreen + diff;
+                }
+            }
+        if(Gdx.input.isKeyPressed(Keys.NUM_2)) 
+            {
+                shapeBlue = shapeBlue + 0.01f;
+                float diff = 1-shapeBlue;
+                while(shapeBlue > 1)
+                {
+                    shapeBlue = shapeBlue + diff;
+                }
+            }
+        if(Gdx.input.isKeyPressed(Keys.NUM_3)) 
+            {
+                shapeRed = shapeRed + 0.01f;
+                float diff = 1-shapeRed;
+                while(shapeRed > 1)
+                {
+                    shapeRed = shapeRed + diff;
+                }
+            }
+        if(Gdx.input.isKeyPressed(Keys.NUM_4)) 
+            {
+                shapeGreen = shapeGreen - 0.01f;
+                float diff = 0-shapeGreen;
+                while(shapeGreen < 0)
+                {
+                    diff = 0-shapeGreen;
+                    shapeGreen = shapeGreen + diff;
+                }
+            }
+        if(Gdx.input.isKeyPressed(Keys.NUM_5)) 
+            {
+                shapeBlue = shapeBlue - 0.01f;
+                float diff = 0-shapeBlue;
+                while(shapeBlue < 0)
+                {
+                    shapeBlue = shapeBlue + diff;
+                }
+            }
+        if(Gdx.input.isKeyPressed(Keys.NUM_6)) 
+        	{
+        	    shapeRed = shapeRed - 0.01f;
+        	    float diff = 0-shapeRed;
+        	    while(shapeRed < 0)
+        	    {
+        	        shapeRed = shapeRed + diff;
+        	    }
+        	}
     }
 
     @Override
