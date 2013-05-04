@@ -92,12 +92,12 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         if(Gdx.input.isKeyPressed(Keys.DPAD_RIGHT)) shapeX = shapeX + 3;
 
         //Poorly controls color, will be fixed in future. Use numbers 1-3 to control
-        if(Gdx.input.isKeyPressed(Keys.NUM_1)) shapeGreen++;
-        if(Gdx.input.isKeyPressed(Keys.NUM_2)) shapeBlue++;
-        if(Gdx.input.isKeyPressed(Keys.NUM_3)) shapeRed++;
-        if(Gdx.input.isKeyPressed(Keys.NUM_4)) shapeGreen--;
-        if(Gdx.input.isKeyPressed(Keys.NUM_5)) shapeBlue--;
-        if(Gdx.input.isKeyPressed(Keys.NUM_6)) shapeRed--;
+        if(Gdx.input.isKeyPressed(Keys.NUM_1)) shapeGreen = 1;
+        if(Gdx.input.isKeyPressed(Keys.NUM_2)) shapeBlue = 1;
+        if(Gdx.input.isKeyPressed(Keys.NUM_3)) shapeRed = 1;
+        if(Gdx.input.isKeyPressed(Keys.NUM_4)) shapeGreen = 0;
+        if(Gdx.input.isKeyPressed(Keys.NUM_5)) shapeBlue = 0;
+        if(Gdx.input.isKeyPressed(Keys.NUM_6)) shapeRed = 0;
     }
 
     @Override
