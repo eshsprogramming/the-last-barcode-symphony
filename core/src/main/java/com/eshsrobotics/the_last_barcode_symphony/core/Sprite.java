@@ -1,6 +1,7 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -8,8 +9,8 @@ public class Sprite
 {
     private SpriteBatch batch;
     private Texture texture;
-    int spriteX = 0;
-    int spriteY = 0;
+    int spriteX = 100;
+    int spriteY = 100;
     
     public void create()
     {
@@ -19,13 +20,24 @@ public class Sprite
     
     public void render(float delta)
     {
-        if(Gdx.input.isTouched() == true)
-        {
-            spriteX = Gdx.input.getX();
-            spriteY = Gdx.graphics.getHeight()-Gdx.input.getY();
-        }
+        Input input = Gdx.input;
+        int x = input.getX(),
+            y = Gdx.graphics.getHeight() - input.getY();
+        int width = texture.getWidth(),
+            height = texture.getHeight();
         batch.begin();
-        batch.draw(texture, spriteX-16, spriteY-16);
+        batch.draw(texture, spriteX, spriteY);
         batch.end();
+        if(input.isTouched() == true)
+        {
+            if(x < spriteX+width && x > spriteX)
+            {
+                if(y < spriteY+height && y > spriteY)
+                {
+                    spriteX = x - width / 2;
+                    spriteY = y - height / 2;
+                }
+            }
+        }
     }
 }
