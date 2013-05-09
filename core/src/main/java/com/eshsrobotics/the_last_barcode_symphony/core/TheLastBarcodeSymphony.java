@@ -13,9 +13,8 @@ import com.badlogic.gdx.math.Vector2;
 
 public class TheLastBarcodeSymphony implements ApplicationListener
 {
-    private SpriteBatch batch;
-    private Texture texture;
-    private ShapeRenderer shape;
+    private Sprite batch;
+    private Shape shape;
     private Texture texturebg;
     private Texture texturemg;
     private Texture clouds;
@@ -24,28 +23,18 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     private ParallaxBackground rbg;
     private TextureRegion paraBG;
     private float delta = 0.1f;
-
-    int shapeHeight = 50;
-    int shapeWidth = 50;
-    int shapeX = 100;
-    int shapeY = 100;
-
-    float shapeRed = 0;
-    float shapeGreen = 0;
-    float shapeBlue = 0;
-
+    
     @Override
     public void create()
     {
-        texture = new Texture(Gdx.files.internal("Test.png"));
         texturebg = new Texture(Gdx.files.internal("BGBC.png"));
         texturemg = new Texture(Gdx.files.internal("MGBC.png"));
         clouds = new Texture(Gdx.files.internal("Clouds.png"));
         paraBG = new TextureRegion(texturebg);
         paraMG = new TextureRegion(texturemg);
         paraclouds = new TextureRegion(clouds);
-        batch = new SpriteBatch();
-        shape = new ShapeRenderer();
+        batch = new Sprite();
+        shape = new Shape();
         rbg = new ParallaxBackground(new ParallaxLayer[]
                                      {
                                          new ParallaxLayer(paraBG, new Vector2(0.01f, 0), new Vector2(0, 0)),
@@ -69,123 +58,8 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
-        batch.begin();
-        batch.draw(texture, 16, 16);
-        batch.end();
-        shape.begin(ShapeType.Filled);
-        shape.setColor(shapeRed, shapeGreen, shapeBlue, 1);
-        shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
-        shape.end();
-
-        //Controls size with "WASD"
-        if(Gdx.input.isKeyPressed(Keys.W))
-        {
-            shapeHeight = shapeHeight + 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.S))
-        {
-            shapeHeight = shapeHeight - 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.A))
-        {
-            shapeWidth = shapeWidth - 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.D))
-        {
-            shapeWidth = shapeWidth + 3;
-        }
-
-        //Controls Location with arrow keys
-        if(Gdx.input.isKeyPressed(Keys.DPAD_UP))
-        {
-            shapeY = shapeY + 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.DPAD_DOWN))
-        {
-            shapeY = shapeY - 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.DPAD_LEFT))
-        {
-            shapeX = shapeX - 3;
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.DPAD_RIGHT))
-        {
-            shapeX = shapeX + 3;
-        }
-
-        //Poorly controls color, will be fixed in future. Use numbers 1-3 to control
-        if(Gdx.input.isKeyPressed(Keys.NUM_1))
-        {
-            shapeGreen = shapeGreen + 0.01f;
-            float diff = 1 - shapeGreen;
-
-            while(shapeGreen > 1)
-            {
-                shapeGreen = shapeGreen + diff;
-            }
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.NUM_2))
-        {
-            shapeBlue = shapeBlue + 0.01f;
-            float diff = 1 - shapeBlue;
-
-            while(shapeBlue > 1)
-            {
-                shapeBlue = shapeBlue + diff;
-            }
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.NUM_3))
-        {
-            shapeRed = shapeRed + 0.01f;
-            float diff = 1 - shapeRed;
-
-            while(shapeRed > 1)
-            {
-                shapeRed = shapeRed + diff;
-            }
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.NUM_4))
-        {
-            shapeGreen = shapeGreen - 0.01f;
-            float diff = 0 - shapeGreen;
-
-            while(shapeGreen < 0)
-            {
-                diff = 0 - shapeGreen;
-                shapeGreen = shapeGreen + diff;
-            }
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.NUM_5))
-        {
-            shapeBlue = shapeBlue - 0.01f;
-            float diff = 0 - shapeBlue;
-
-            while(shapeBlue < 0)
-            {
-                shapeBlue = shapeBlue + diff;
-            }
-        }
-
-        if(Gdx.input.isKeyPressed(Keys.NUM_6))
-        {
-            shapeRed = shapeRed - 0.01f;
-            float diff = 0 - shapeRed;
-
-            while(shapeRed < 0)
-            {
-                shapeRed = shapeRed + diff;
-            }
-        }
+        batch.render(delta);
+        shape.render(delta);
     }
 
     @Override
