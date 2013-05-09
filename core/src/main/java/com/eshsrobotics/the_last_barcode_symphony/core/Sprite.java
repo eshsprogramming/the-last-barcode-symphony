@@ -15,8 +15,11 @@ public class Sprite
     {
         batch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("Test.png"));
-        spriteX = Gdx.input.getX();
-        spriteY = Gdx.graphics.getHeight()-Gdx.input.getY();
+        if(Gdx.input.isTouched() == true)
+        {
+            spriteX = Gdx.input.getX();
+            spriteY = Gdx.graphics.getHeight()-Gdx.input.getY();
+        }
         batch.begin();
         batch.draw(texture, spriteX-16, spriteY-16);
         batch.end();
