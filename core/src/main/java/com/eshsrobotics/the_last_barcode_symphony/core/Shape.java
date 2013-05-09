@@ -17,9 +17,13 @@ public class Shape implements InputProcessor
     int shapeWidth = 50;
     int shapeHeight = 50;
     
-    public void render(float delta)
+    public void create()
     {
         shape = new ShapeRenderer();
+    }
+    
+    public void render(float delta)
+    {
         shape.begin(ShapeType.Filled);
         shape.setColor(shapeRed, shapeGreen, shapeBlue, 1);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);

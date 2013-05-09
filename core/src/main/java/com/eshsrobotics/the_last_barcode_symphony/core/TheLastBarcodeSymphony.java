@@ -44,6 +44,8 @@ public class TheLastBarcodeSymphony implements ApplicationListener
                                      800,
                                      600,
                                      new Vector2(150, 0));
+        batch.create();
+        shape.create();
     }
 
     @Override

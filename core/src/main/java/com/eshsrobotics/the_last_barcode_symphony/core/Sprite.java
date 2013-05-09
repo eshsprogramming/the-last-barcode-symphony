@@ -11,10 +11,14 @@ public class Sprite
     int spriteX = 0;
     int spriteY = 0;
     
-    public void render(float delta)
+    public void create()
     {
         batch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("Test.png"));
+    }
+    
+    public void render(float delta)
+    {
         if(Gdx.input.isTouched() == true)
         {
             spriteX = Gdx.input.getX();
