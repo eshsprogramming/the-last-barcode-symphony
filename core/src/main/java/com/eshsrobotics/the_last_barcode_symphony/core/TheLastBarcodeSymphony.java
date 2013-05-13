@@ -38,8 +38,8 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         rbg = new ParallaxBackground(new ParallaxLayer[]
                                      {
                                          new ParallaxLayer(paraBG, new Vector2(0.01f, 0), new Vector2(0, 0)),
-                                         new ParallaxLayer(paraclouds, new Vector2(0.05f, 0), new Vector2(0, 0)),
-                                         new ParallaxLayer(paraMG, new Vector2(0.1f, 0), new Vector2(0, 0))
+                                         //new ParallaxLayer(paraclouds, new Vector2(0.05f, 0), new Vector2(0, 0)),
+                                         //new ParallaxLayer(paraMG, new Vector2(0.1f, 0), new Vector2(0, 0))
                                      },
                                      800,
                                      600,

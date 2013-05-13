@@ -27,6 +27,7 @@ public class Shape implements InputProcessor
         shape.begin(ShapeType.Filled);
         shape.setColor(shapeRed, shapeGreen, shapeBlue, 1);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
+        shape.rect(300, 0, 25, Gdx.graphics.getHeight());
         shape.end();
         //Controls size with "WASD"
         if(Gdx.input.isKeyPressed(Keys.W))
