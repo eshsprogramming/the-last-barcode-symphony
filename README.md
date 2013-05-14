@@ -65,7 +65,7 @@ Go to **File -> Settings** and in the tree dialog choose Maven. Specify the dire
 
 ##### Importing the project
 
-Go to **File -> Import Project** and then navigate to the `gravity-cat` folder you cloned from GitHub.
+Go to **File -> Import Project** and then navigate to the `the_last_barcode_symphony` folder you cloned from GitHub.
 
 Once the project is loaded, you need to enable the Maven profiles. On the right of your screen, open the Maven project
 view and check the three profiles: desktop, android, and html.
@@ -75,7 +75,7 @@ view and check the three profiles: desktop, android, and html.
 ###### Desktop
 
 Go to **Run -> Edit Configuration** and create a new configuration by clicking the plus button in the top left and
-selecting `Application`. Set the main class to the `com.eshsprogramming.gravity-cat.java.GravityCatDesktop` and select
+selecting `Application`. Set the main class to the `com.eshsrobotics.the_last_barcode_symphony.java.GravityCatDesktop` and select
 the desktop module.
 
 Launch the configuration to run the app on your desktop.
@@ -114,7 +114,7 @@ To create a runnable jar to share with others, run:
 
     mvn -Pdesktop package
 
-This will create a file called `gravity-cat-desktop-0.1-SNAPSHOT-jar-with-dependencies.jar` in the `desktop/target`
+This will create a file called `the_last_barcode_symphony-desktop-0.1-SNAPSHOT-jar-with-dependencies.jar` in the `desktop/target`
 folder.
 
 You should not be creating a new runnable jar for testing each new feature. Instead, just run the game from your IDE.
@@ -125,7 +125,7 @@ Create an unsigned APK for Android:
 
     mvn -Pandroid package
 
-This will create a file called `gravity-cat-android-0.1-SNAPSHOT.apk` in the `android/target` folder.
+This will create a file called `the_last_barcode_symphony-android-0.1-SNAPSHOT.apk` in the `android/target` folder.
 
 To install the game on a connected device or emulator, run:
 
@@ -138,5 +138,6 @@ To compile the HTML5 project to Javascript, run:
     mvn -Phtml package
 
 The result is located in the `html/target` folder. You can either deploy the `.war` file that was generated to a Jetty
-or Tomcat server, or copy the contents of the `html/target/gravity-cat-0.1-SNAPSHOT/` folder to the server you want to
+or Tomcat server, or copy the contents of the `html/target/the_last_barcode_symphony-0.1-SNAPSHOT/` folder to the server you want to
 deploy on. Both the `.war` file and the folder contain all of the compiled Javscript, HTML, and assets.
+
