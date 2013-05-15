@@ -75,7 +75,7 @@ view and check the three profiles: desktop, android, and html.
 ###### Desktop
 
 Go to **Run -> Edit Configuration** and create a new configuration by clicking the plus button in the top left and
-selecting `Application`. Set the main class to the `com.eshsrobotics.the_last_barcode_symphony.java.GravityCatDesktop` and select
+selecting `Application`. Set the main class to the `com.eshsrobotics.the_last_barcode_symphony.java.TheLastBarcodeSymphonyDesktop` and select
 the desktop module.
 
 Launch the configuration to run the app on your desktop.
