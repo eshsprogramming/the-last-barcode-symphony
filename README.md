@@ -61,11 +61,11 @@ Follow [this](http://www.mkyong.com/maven/how-to-install-maven-in-windows/) tuto
 
 ##### Configuring Maven
 
-Go to **File -> Settings** and in the tree dialog choose Maven. Specify the directory where Maven lives.
+Go to **File → Settings** and in the tree dialog choose Maven. Specify the directory where Maven lives.
 
 ##### Importing the project
 
-Go to **File -> Import Project** and then navigate to the `the_last_barcode_symphony` folder you cloned from GitHub.
+Go to **File → Import Project** and then navigate to the `the_last_barcode_symphony` folder you cloned from GitHub.
 
 Once the project is loaded, you need to enable the Maven profiles. On the right of your screen, open the Maven project
 view and check the three profiles: desktop, android, and html.
@@ -74,7 +74,7 @@ view and check the three profiles: desktop, android, and html.
 
 ###### Desktop
 
-Go to **Run -> Edit Configuration** and create a new configuration by clicking the plus button in the top left and
+Go to **Run → Edit Configuration** and create a new configuration by clicking the plus button in the top left and
 selecting `Application`. Set the main class to the `com.eshsrobotics.the_last_barcode_symphony.java.TheLastBarcodeSymphonyDesktop` and select
 the desktop module.
 
@@ -97,12 +97,12 @@ Before you can import the project, you need to install the following Eclipse plu
   their repository, compile the plugin, and manually install it in Eclipse.
 * [Google Web Toolkit](https://developers.google.com/web-toolkit/) - Allows you to develop GWT projects.
 
-Once all of these are installed, you can import the project by going to **File -> Import... -> Maven -> Existing Maven
+Once all of these are installed, you can import the project by going to **File → Import... → Maven → Existing Maven
 Projects**. Thiss will import the parent `pom` as a projet along with the `core`, `desktop`, `android`, and `html`
 project.
 
 The `html` project might not be recognized by Eclipse as a GWT project. To fix this, right click the project, go to
-**Properties -> Google -> Web Toolkit**. Check `Use Google Web toolkit`. Next, go to **Properties -> Google -> Web
+**Properties → Google → Web Toolkit**. Check `Use Google Web toolkit`. Next, go to **Properties → Google → Web
 Application**, check `This project has a WAR directory`, specify `src/main/webapp`, and finally check `Launch and deploy
 from this directory`.
 
