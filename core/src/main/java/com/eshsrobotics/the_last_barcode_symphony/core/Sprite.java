@@ -5,19 +5,19 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class Sprite 
+public class Sprite
 {
     private SpriteBatch batch;
     private Texture texture;
     int spriteX = 100;
     int spriteY = 100;
-    
+
     public void create()
     {
         batch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("Test.png"));
     }
-    
+
     public void render(float delta)
     {
         Input input = Gdx.input;
@@ -28,11 +28,12 @@ public class Sprite
         batch.begin();
         batch.draw(texture, spriteX, spriteY);
         batch.end();
+
         if(input.isTouched() == true)
         {
-            if(x < spriteX+width && x > spriteX)
+            if(x < spriteX + width && x > spriteX)
             {
-                if(y < spriteY+height && y > spriteY)
+                if(y < spriteY + height && y > spriteY)
                 {
                     spriteX = x - width / 2;
                     spriteY = y - height / 2;

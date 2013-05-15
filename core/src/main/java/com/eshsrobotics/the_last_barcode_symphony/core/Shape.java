@@ -22,43 +22,40 @@ public class Shape
     int height = Gdx.graphics.getHeight();
     int width = Gdx.graphics.getWidth();
     int shapeX = 0;
-    int shapeY = (int) (Math.random()*height);
-    int shapeWidth = (int) (Math.random()*250);
-    int shapeHeight = (int) (Math.random()*250);
+    int shapeY = (int)(Math.random() * height);
+    int shapeWidth = (int)(Math.random() * 250);
+    int shapeHeight = (int)(Math.random() * 250);
     int shapeXa = 0;
-    int shapeYa = (int) (Math.random()*height);
-    int shapeWidtha = (int) (Math.random()*250);
-    int shapeHeighta = (int) (Math.random()*250);
+    int shapeYa = (int)(Math.random() * height);
+    int shapeWidtha = (int)(Math.random() * 250);
+    int shapeHeighta = (int)(Math.random() * 250);
     int shapeXb = 0;
-    int shapeYb = (int) (Math.random()*height);
-    int shapeWidthb = (int) (Math.random()*250);
-    int shapeHeightb = (int) (Math.random()*250);
+    int shapeYb = (int)(Math.random() * height);
+    int shapeWidthb = (int)(Math.random() * 250);
+    int shapeHeightb = (int)(Math.random() * 250);
     BitmapFont font;
     int score = 1;
     SpriteBatch sprite;
     boolean touched = false;
     boolean toucheda = false;
     boolean touchedb = false;
-    
+
     public void create()
     {
         shape = new ShapeRenderer();
         font = new BitmapFont();
         sprite = new SpriteBatch();
     }
-    
+
     public void render(float delta)
     {
         sprite.begin();
-        font.draw(sprite, Integer.toString(score), 30, height-30);
+        font.draw(sprite, Integer.toString(score), 30, height - 30);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
-        
         Input input = Gdx.input;
-        
         int x = input.getX(),
             y = Gdx.graphics.getHeight() - input.getY();
-        
         shapeX += 2;
         shapeXa += 3;
         shapeXb += 4;
@@ -74,129 +71,136 @@ public class Shape
         shape.setColor(shapeRedb, shapeGreenb, shapeBlueb, 1);
         shape.rect(shapeXb, shapeYb, shapeWidthb, shapeHeightb);
         shape.end();
-        
-        if (shapeX > width)
+
+        if(shapeX > width)
         {
             shapeX = 0;
-            shapeY = (int) (Math.random()*height);
-            shapeHeight = (int) (Math.random()*250);
-            shapeWidth = (int) (Math.random()*250);
+            shapeY = (int)(Math.random() * height);
+            shapeHeight = (int)(Math.random() * 250);
+            shapeWidth = (int)(Math.random() * 250);
+
             if(touched == false)
             {
                 score -= 100;
             }
+
             touched = false;
         }
-        
-        if (shapeXa > width)
+
+        if(shapeXa > width)
         {
             shapeXa = 0;
-            shapeYa = (int) (Math.random()*height);
-            shapeHeighta = (int) (Math.random()*250);
-            shapeWidtha = (int) (Math.random()*250);
+            shapeYa = (int)(Math.random() * height);
+            shapeHeighta = (int)(Math.random() * 250);
+            shapeWidtha = (int)(Math.random() * 250);
+
             if(toucheda == false)
             {
                 score -= 100;
             }
+
             toucheda = false;
         }
-        
-        if (shapeXb > width)
+
+        if(shapeXb > width)
         {
             shapeXb = 0;
-            shapeYb = (int) (Math.random()*height);
-            shapeWidthb = (int) (Math.random()*250);
-            shapeHeightb = (int) (Math.random()*250);
+            shapeYb = (int)(Math.random() * height);
+            shapeWidthb = (int)(Math.random() * 250);
+            shapeHeightb = (int)(Math.random() * 250);
+
             if(touchedb == false)
             {
                 score -= 100;
             }
+
             touchedb = false;
         }
 
         if(input.isTouched() == true)
         {
-            if(x < shapeX+shapeWidth && x > shapeX)
+            if(x < shapeX + shapeWidth && x > shapeX)
             {
-                if(y < shapeY+shapeHeight && y > shapeY)
+                if(y < shapeY + shapeHeight && y > shapeY)
                 {
                     shapeGreen = 1;
                     score += 1;
                     touched = true;
                 }
-                
+
                 else
                 {
                     shapeGreen -= 0.01;
                 }
             }
-            
+
             else
             {
                 shapeGreen -= 0.01;
             }
         }
-        
+
         else
         {
             shapeGreen -= 0.01;
         }
-        
+
         if(input.isTouched() == true)
         {
-            if(x < shapeXa+shapeWidtha && x > shapeXa)
+            if(x < shapeXa + shapeWidtha && x > shapeXa)
             {
-                if(y < shapeYa+shapeHeighta && y > shapeYa)
+                if(y < shapeYa + shapeHeighta && y > shapeYa)
                 {
                     shapeBluea = 1;
                     score += 1;
                     toucheda = true;
                 }
-                
+
                 else
                 {
                     shapeBluea -= 0.01;
                 }
             }
-            
+
             else
             {
                 shapeBluea -= 0.01;
             }
         }
-        
+
         else
         {
             shapeBluea -= 0.01;
         }
-        
+
         if(input.isTouched() == true)
         {
-            if(x < shapeXb+shapeWidthb && x > shapeXb)
+            if(x < shapeXb + shapeWidthb && x > shapeXb)
             {
-                if(y < shapeYb+shapeHeightb && y > shapeYb)
+                if(y < shapeYb + shapeHeightb && y > shapeYb)
                 {
                     shapeRedb = 1;
                     score += 1;
                     touchedb = true;
                 }
-                
+
                 else
                 {
                     shapeRedb -= 0.01;
                 }
             }
-            
+
             else
             {
                 shapeRedb -= 0.01;
             }
         }
-        
+
         else
         {
             shapeRedb -= 0.01;
         }
+
         /* Old color control code. May have future use. Will delete on 5/28/13 if no use found.
         if(Gdx.input.isKeyPressed(Keys.NUM_1))
         {

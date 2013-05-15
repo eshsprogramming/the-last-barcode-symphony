@@ -23,7 +23,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     private ParallaxBackground rbg;
     private TextureRegion paraBG;
     private float delta = 0.1f;
-    
+
     @Override
     public void create()
     {
