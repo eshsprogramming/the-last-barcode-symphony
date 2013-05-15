@@ -1,17 +1,23 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Input.Keys;
-import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
-public class Shape implements InputProcessor
+public class Shape
 {
     private ShapeRenderer shape;
     float shapeRed = 0;
     float shapeGreen = 0;
     float shapeBlue = 0;
+    float shapeReda = 0;
+    float shapeGreena = 0;
+    float shapeBluea = 0;
+    float shapeRedb = 0;
+    float shapeGreenb = 0;
+    float shapeBlueb = 0;
     int height = Gdx.graphics.getHeight();
     int width = Gdx.graphics.getWidth();
     int shapeX = 0;
@@ -34,13 +40,22 @@ public class Shape implements InputProcessor
     
     public void render(float delta)
     {
+        Input input = Gdx.input;
+        int x = input.getX(),
+            y = Gdx.graphics.getHeight() - input.getY();
         shapeX += 2;
         shapeXa += 3;
         shapeXb += 4;
         shape.begin(ShapeType.Filled);
         shape.setColor(shapeRed, shapeGreen, shapeBlue, 1);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
+        shape.end();
+        shape.begin(ShapeType.Filled);
+        shape.setColor(shapeReda, shapeGreena, shapeBluea, 1);
         shape.rect(shapeXa, shapeYa, shapeWidtha, shapeHeighta);
+        shape.end();
+        shape.begin(ShapeType.Filled);
+        shape.setColor(shapeRedb, shapeGreenb, shapeBlueb, 1);
         shape.rect(shapeXb, shapeYb, shapeWidthb, shapeHeightb);
         shape.end();
         if (shapeX > width)
@@ -67,7 +82,47 @@ public class Shape implements InputProcessor
             shapeHeightb = (int) (Math.random()*250);
         }
         
-        //Poorly controls color, will be fixed in future. Use numbers 1-3 to control
+        if(input.isTouched() == false)
+        {
+            shapeGreen -= 0.01;
+            shapeBluea -= 0.01;
+            shapeRedb -= 0.01;
+        }
+        
+        if(input.isTouched() == true)
+        {
+            if(x < shapeX+shapeWidth && x > shapeX)
+            {
+                if(y < shapeY+shapeHeight && y > shapeY)
+                {
+                    shapeGreen = 1;
+                }
+            }
+        }
+        
+        if(input.isTouched() == true)
+        {
+            if(x < shapeXa+shapeWidtha && x > shapeXa)
+            {
+                if(y < shapeYa+shapeHeighta && y > shapeYa)
+                {
+                    shapeBluea = 1;
+                }
+            }
+        }
+        
+        if(input.isTouched() == true)
+        {
+            if(x < shapeXb+shapeWidthb && x > shapeXb)
+            {
+                if(y < shapeYb+shapeHeightb && y > shapeYb)
+                {
+                    shapeRedb = 1;
+                }
+            }
+        }
+        
+        /* Old color control code. May have future use. Will delete on 5/28/13 if no use found.
         if(Gdx.input.isKeyPressed(Keys.NUM_1))
         {
             shapeGreen = shapeGreen + 0.01f;
@@ -133,58 +188,6 @@ public class Shape implements InputProcessor
             {
                 shapeRed = shapeRed + diff;
             }
-        }
-    }
-    
-    @Override
-    public boolean keyDown(int keycode) 
-    {
-        if(keycode == Keys.W)
-        {
-            shapeHeight += 3;
-        }
-        return false;
-    }
-    
-    @Override
-    public boolean keyUp(int keycode) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean keyTyped(char character) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean touchDown(int screenX, int screenY, int pointer, int button) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean touchUp(int screenX, int screenY, int pointer, int button) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean touchDragged(int screenX, int screenY, int pointer) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean mouseMoved(int screenX, int screenY) 
-    {
-        return false;
-    }
-    
-    @Override
-    public boolean scrolled(int amount) 
-    {
-        return false;
+        }*/
     }
 }
