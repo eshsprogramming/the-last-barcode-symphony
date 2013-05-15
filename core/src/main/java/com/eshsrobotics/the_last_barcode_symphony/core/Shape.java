@@ -33,13 +33,13 @@ public class Shape
     int shapeYb = (int)(Math.random() * height);
     int shapeWidthb = (int)(Math.random() * 250);
     int shapeHeightb = (int)(Math.random() * 250);
-    BitmapFont font;
-    double score = 0;
     int scoreReal = 0;
-    SpriteBatch sprite;
+    double score = 0;
     boolean touched = false;
     boolean toucheda = false;
     boolean touchedb = false;
+    BitmapFont font;
+    SpriteBatch sprite;
 
     public void create()
     {
@@ -50,14 +50,14 @@ public class Shape
 
     public void render(float delta)
     {
+        Input input = Gdx.input;
+        int x = input.getX(),
+            y = Gdx.graphics.getHeight() - input.getY();
         scoreReal = (int)(score);
         sprite.begin();
         font.draw(sprite, Integer.toString(scoreReal), 30, height - 30);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
-        Input input = Gdx.input;
-        int x = input.getX(),
-            y = Gdx.graphics.getHeight() - input.getY();
         shapeX += 2;
         shapeXa += 3;
         shapeXb += 4;
