@@ -1,5 +1,5 @@
-last-barcode-symphony
-=====================
+The Last Barcode Symphony
+=========================
 
 Barcodes be barcoding.
 
