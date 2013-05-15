@@ -34,7 +34,8 @@ public class Shape
     int shapeWidthb = (int)(Math.random() * 250);
     int shapeHeightb = (int)(Math.random() * 250);
     BitmapFont font;
-    int score = 1;
+    double score = 0;
+    int scoreReal = 0;
     SpriteBatch sprite;
     boolean touched = false;
     boolean toucheda = false;
@@ -49,8 +50,9 @@ public class Shape
 
     public void render(float delta)
     {
+        scoreReal = (int)(score);
         sprite.begin();
-        font.draw(sprite, Integer.toString(score), 30, height - 30);
+        font.draw(sprite, Integer.toString(scoreReal), 30, height - 30);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
         Input input = Gdx.input;
@@ -81,7 +83,7 @@ public class Shape
 
             if(touched == false)
             {
-                score -= 100;
+                score = (score * 0.9) - 50;
             }
 
             touched = false;
@@ -96,7 +98,7 @@ public class Shape
 
             if(toucheda == false)
             {
-                score -= 100;
+                score = (score * 0.9) - 50;
             }
 
             toucheda = false;
@@ -111,7 +113,7 @@ public class Shape
 
             if(touchedb == false)
             {
-                score -= 100;
+                score = (score * 0.9) - 50;
             }
 
             touchedb = false;
@@ -124,7 +126,7 @@ public class Shape
                 if(y < shapeY + shapeHeight && y > shapeY)
                 {
                     shapeGreen = 1;
-                    score += 1;
+                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
                     touched = true;
                 }
 
@@ -152,7 +154,7 @@ public class Shape
                 if(y < shapeYa + shapeHeighta && y > shapeYa)
                 {
                     shapeBluea = 1;
-                    score += 1;
+                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidtha + shapeHeighta)/10));
                     toucheda = true;
                 }
 
@@ -180,7 +182,7 @@ public class Shape
                 if(y < shapeYb + shapeHeightb && y > shapeYb)
                 {
                     shapeRedb = 1;
-                    score += 1;
+                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
                     touchedb = true;
                 }
 
