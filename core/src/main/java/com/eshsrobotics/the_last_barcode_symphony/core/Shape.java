@@ -10,15 +10,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public class Shape
 {
     private ShapeRenderer shape;
-    float shapeRed = 0;
     float shapeGreen = 0;
-    float shapeBlue = 0;
-    float shapeReda = 0;
-    float shapeGreena = 0;
     float shapeBluea = 0;
     float shapeRedb = 0;
-    float shapeGreenb = 0;
-    float shapeBlueb = 0;
     int height = Gdx.graphics.getHeight();
     int width = Gdx.graphics.getWidth();
     int shapeX = 0;
@@ -62,15 +56,15 @@ public class Shape
         shapeXa += 3;
         shapeXb += 4;
         shape.begin(ShapeType.Filled);
-        shape.setColor(shapeRed, shapeGreen, shapeBlue, 1);
+        shape.setColor(0, shapeGreen, 0, 1);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
         shape.end();
         shape.begin(ShapeType.Filled);
-        shape.setColor(shapeReda, shapeGreena, shapeBluea, 1);
+        shape.setColor(0, 0, shapeBluea, 1);
         shape.rect(shapeXa, shapeYa, shapeWidtha, shapeHeighta);
         shape.end();
         shape.begin(ShapeType.Filled);
-        shape.setColor(shapeRedb, shapeGreenb, shapeBlueb, 1);
+        shape.setColor(shapeRedb, 0, 0, 1);
         shape.rect(shapeXb, shapeYb, shapeWidthb, shapeHeightb);
         shape.end();
 
@@ -83,10 +77,11 @@ public class Shape
 
             if(touched == false)
             {
-                score = (score * 0.9) - 50;
+                score = (score * 0.85) - 50;
             }
 
             touched = false;
+            shapeGreen = 0;
         }
 
         if(shapeXa > width)
@@ -102,6 +97,7 @@ public class Shape
             }
 
             toucheda = false;
+            shapeBluea = 0;
         }
 
         if(shapeXb > width)
@@ -113,10 +109,11 @@ public class Shape
 
             if(touchedb == false)
             {
-                score = (score * 0.9) - 50;
+                score = (score * 0.95) - 50;
             }
 
             touchedb = false;
+            shapeRedb = 0;
         }
 
         if(input.isTouched() == true)
@@ -126,25 +123,25 @@ public class Shape
                 if(y < shapeY + shapeHeight && y > shapeY)
                 {
                     shapeGreen = 1;
-                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
+                    score += 0.1 + (90 * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
                     touched = true;
                 }
 
                 else
                 {
-                    shapeGreen -= 0.01;
+                    shapeGreen -= 0.005;
                 }
             }
 
             else
             {
-                shapeGreen -= 0.01;
+                shapeGreen -= 0.005;
             }
         }
 
         else
         {
-            shapeGreen -= 0.01;
+            shapeGreen -= 0.005;
         }
 
         if(input.isTouched() == true)
@@ -160,19 +157,19 @@ public class Shape
 
                 else
                 {
-                    shapeBluea -= 0.01;
+                    shapeBluea -= 0.005;
                 }
             }
 
             else
             {
-                shapeBluea -= 0.01;
+                shapeBluea -= 0.005;
             }
         }
 
         else
         {
-            shapeBluea -= 0.01;
+            shapeBluea -= 0.005;
         }
 
         if(input.isTouched() == true)
@@ -182,25 +179,25 @@ public class Shape
                 if(y < shapeYb + shapeHeightb && y > shapeYb)
                 {
                     shapeRedb = 1;
-                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
+                    score += 0.1 + (110 * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
                     touchedb = true;
                 }
 
                 else
                 {
-                    shapeRedb -= 0.01;
+                    shapeRedb -= 0.005;
                 }
             }
 
             else
             {
-                shapeRedb -= 0.01;
+                shapeRedb -= 0.005;
             }
         }
 
         else
         {
-            shapeRedb -= 0.01;
+            shapeRedb -= 0.005;
         }
 
         /* Old color control code. May have future use. Will delete on 5/28/13 if no use found.
