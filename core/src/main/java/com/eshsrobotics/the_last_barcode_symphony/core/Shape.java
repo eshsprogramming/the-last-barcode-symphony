@@ -17,16 +17,16 @@ public class Shape
     int width = Gdx.graphics.getWidth();
     int shapeX = 0;
     int shapeY = (int)(Math.random() * height);
-    int shapeWidth = 10 + (int)(Math.random() * 250);
-    int shapeHeight = 10 + (int)(Math.random() * 250);
+    int shapeWidth = 30 + (int)(Math.random() * 250);
+    int shapeHeight = 30 + (int)(Math.random() * 250);
     int shapeXa = 0;
     int shapeYa = (int)(Math.random() * height);
-    int shapeWidtha = 10 + (int)(Math.random() * 250);
-    int shapeHeighta = 10 + (int)(Math.random() * 250);
+    int shapeWidtha = 30 + (int)(Math.random() * 250);
+    int shapeHeighta = 30 + (int)(Math.random() * 250);
     int shapeXb = 0;
     int shapeYb = (int)(Math.random() * height);
-    int shapeWidthb = 10 + (int)(Math.random() * 250);
-    int shapeHeightb = 10 + (int)(Math.random() * 250);
+    int shapeWidthb = 30 + (int)(Math.random() * 250);
+    int shapeHeightb = 30 + (int)(Math.random() * 250);
     int scoreReal = 0;
     int speed = 0;
     int speeda = 0;
@@ -78,8 +78,8 @@ public class Shape
         {
             shapeX = 0;
             shapeY = (int)(Math.random() * height);
-            shapeHeight = (int)(Math.random() * 250);
-            shapeWidth = (int)(Math.random() * 250);
+            shapeHeight = 30 + (int)(Math.random() * 250);
+            shapeWidth = 30 + (int)(Math.random() * 250);
 
             if(touched == false)
             {
@@ -94,8 +94,8 @@ public class Shape
         {
             shapeXa = 0;
             shapeYa = (int)(Math.random() * height);
-            shapeHeighta = (int)(Math.random() * 250);
-            shapeWidtha = (int)(Math.random() * 250);
+            shapeHeighta = 30 + (int)(Math.random() * 250);
+            shapeWidtha = 30 + (int)(Math.random() * 250);
 
             if(toucheda == false)
             {
@@ -110,8 +110,8 @@ public class Shape
         {
             shapeXb = 0;
             shapeYb = (int)(Math.random() * height);
-            shapeWidthb = (int)(Math.random() * 250);
-            shapeHeightb = (int)(Math.random() * 250);
+            shapeWidthb = 30 + (int)(Math.random() * 250);
+            shapeHeightb = 30 + (int)(Math.random() * 250);
 
             if(touchedb == false)
             {

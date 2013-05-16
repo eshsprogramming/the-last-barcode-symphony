@@ -49,7 +49,7 @@ public class ParallaxBackground
                 {
                     currentY += - (layer.region.getRegionHeight() + layer.padding.y);
                 }
-
+                
                 do
                 {
                     batch.draw(layer.region,
