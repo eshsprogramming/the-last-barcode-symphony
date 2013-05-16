@@ -17,17 +17,20 @@ public class Shape
     int width = Gdx.graphics.getWidth();
     int shapeX = 0;
     int shapeY = (int)(Math.random() * height);
-    int shapeWidth = (int)(Math.random() * 250);
-    int shapeHeight = (int)(Math.random() * 250);
+    int shapeWidth = 10 + (int)(Math.random() * 250);
+    int shapeHeight = 10 + (int)(Math.random() * 250);
     int shapeXa = 0;
     int shapeYa = (int)(Math.random() * height);
-    int shapeWidtha = (int)(Math.random() * 250);
-    int shapeHeighta = (int)(Math.random() * 250);
+    int shapeWidtha = 10 + (int)(Math.random() * 250);
+    int shapeHeighta = 10 + (int)(Math.random() * 250);
     int shapeXb = 0;
     int shapeYb = (int)(Math.random() * height);
-    int shapeWidthb = (int)(Math.random() * 250);
-    int shapeHeightb = (int)(Math.random() * 250);
+    int shapeWidthb = 10 + (int)(Math.random() * 250);
+    int shapeHeightb = 10 + (int)(Math.random() * 250);
     int scoreReal = 0;
+    int speed = 0;
+    int speeda = 0;
+    int speedb = 0;
     double score = 0;
     boolean touched = false;
     boolean toucheda = false;
@@ -52,9 +55,12 @@ public class Shape
         font.draw(sprite, Integer.toString(scoreReal), 30, height - 30);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
-        shapeX += 2;
-        shapeXa += 3;
-        shapeXb += 4;
+        speed = 1 + (int)(score/5500);
+        shapeX += 1 + speed;
+        speeda = 1 + (int)(score/4500);
+        shapeXa += 2 + speeda;
+        speedb = 1 + (int)(score/3500);
+        shapeXb += 3 + speedb;
         shape.begin(ShapeType.Filled);
         shape.setColor(0, shapeGreen, 0, 1);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
@@ -123,7 +129,7 @@ public class Shape
                 if(y < shapeY + shapeHeight && y > shapeY)
                 {
                     shapeGreen = 1;
-                    score += 0.1 + (90 * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
+                    score += 0.1 + ((90 * speed) * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
                     touched = true;
                 }
 
@@ -151,7 +157,7 @@ public class Shape
                 if(y < shapeYa + shapeHeighta && y > shapeYa)
                 {
                     shapeBluea = 1;
-                    score += 0.1 + (100 * Math.pow(0.8, (shapeWidtha + shapeHeighta)/10));
+                    score += 0.1 + ((100 * speeda) * Math.pow(0.8, (shapeWidtha + shapeHeighta)/10));
                     toucheda = true;
                 }
 
@@ -179,7 +185,7 @@ public class Shape
                 if(y < shapeYb + shapeHeightb && y > shapeYb)
                 {
                     shapeRedb = 1;
-                    score += 0.1 + (110 * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
+                    score += 0.1 + ((110 * speedb) * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
                     touchedb = true;
                 }
 
