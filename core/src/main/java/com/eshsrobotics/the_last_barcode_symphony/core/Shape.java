@@ -2,6 +2,7 @@ package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -73,14 +74,20 @@ public class Shape
         shape.setColor(shapeRedb, 0, 0, 1);
         shape.rect(shapeXb, shapeYb, shapeWidthb, shapeHeightb);
         shape.end();
+        
+        //Cheat code to get up to speed
+        if(input.isKeyPressed(Keys.SPACE))
+        {
+            score = 10000;
+        }
 
         if(shapeX > width)
         {
-            shapeX = 0;
             shapeY = (int)(Math.random() * height);
             shapeHeight = 30 + (int)(Math.random() * 250);
             shapeWidth = 30 + (int)(Math.random() * 250);
-
+            shapeX = -shapeWidth;
+            
             if(touched == false)
             {
                 score = (score * 0.85) - 50;
@@ -92,10 +99,10 @@ public class Shape
 
         if(shapeXa > width)
         {
-            shapeXa = 0;
             shapeYa = (int)(Math.random() * height);
             shapeHeighta = 30 + (int)(Math.random() * 250);
             shapeWidtha = 30 + (int)(Math.random() * 250);
+            shapeXa = -shapeWidtha;
 
             if(toucheda == false)
             {
@@ -108,10 +115,10 @@ public class Shape
 
         if(shapeXb > width)
         {
-            shapeXb = 0;
             shapeYb = (int)(Math.random() * height);
             shapeWidthb = 30 + (int)(Math.random() * 250);
             shapeHeightb = 30 + (int)(Math.random() * 250);
+            shapeXb = -shapeWidthb;
 
             if(touchedb == false)
             {
