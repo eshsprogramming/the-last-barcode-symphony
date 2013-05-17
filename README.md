@@ -114,7 +114,7 @@ To create a runnable jar to share with others, run:
 
     mvn -Pdesktop package
 
-This will create a file called `the_last_barcode_symphony-desktop-0.1-SNAPSHOT-jar-with-dependencies.jar` in the `desktop/target`
+This will create a file called `the_last_barcode_symphony-desktop-1.0-SNAPSHOT-jar-with-dependencies.jar` in the `desktop/target`
 folder.
 
 You should not be creating a new runnable jar for testing each new feature. Instead, just run the game from your IDE.
@@ -125,7 +125,7 @@ Create an unsigned APK for Android:
 
     mvn -Pandroid package
 
-This will create a file called `the_last_barcode_symphony-android-0.1-SNAPSHOT.apk` in the `android/target` folder.
+This will create a file called `the_last_barcode_symphony-android-1.0-SNAPSHOT.apk` in the `android/target` folder.
 
 To install the game on a connected device or emulator, run:
 
@@ -138,6 +138,5 @@ To compile the HTML5 project to Javascript, run:
     mvn -Phtml package
 
 The result is located in the `html/target` folder. You can either deploy the `.war` file that was generated to a Jetty
-or Tomcat server, or copy the contents of the `html/target/the_last_barcode_symphony-0.1-SNAPSHOT/` folder to the server you want to
+or Tomcat server, or copy the contents of the `html/target/the_last_barcode_symphony-1.0-SNAPSHOT/` folder to the server you want to
 deploy on. Both the `.war` file and the folder contain all of the compiled Javscript, HTML, and assets.
-
