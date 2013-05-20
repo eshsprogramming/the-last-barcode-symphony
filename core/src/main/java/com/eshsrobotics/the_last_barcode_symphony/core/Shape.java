@@ -76,9 +76,19 @@ public class Shape
         shape.end();
         
         //Cheat code to get up to speed
-        if(input.isKeyPressed(Keys.SPACE))
+        if(input.isKeyPressed(Keys.NUM_1))
         {
             score = 10000;
+        }
+
+        if(input.isKeyPressed(Keys.NUM_2))
+        {
+            score = 20000;
+        }
+
+        if(input.isKeyPressed(Keys.NUM_3))
+        {
+            score = 30000;
         }
 
         if(shapeX > width)
@@ -88,7 +98,7 @@ public class Shape
             shapeWidth = 30 + (int)(Math.random() * 250);
             shapeX = -shapeWidth;
             
-            if(touched == false)
+            if(!touched)
             {
                 score = (score * 0.85) - 50;
             }
@@ -104,7 +114,7 @@ public class Shape
             shapeWidtha = 30 + (int)(Math.random() * 250);
             shapeXa = -shapeWidtha;
 
-            if(toucheda == false)
+            if(!toucheda)
             {
                 score = (score * 0.9) - 50;
             }
@@ -120,7 +130,7 @@ public class Shape
             shapeHeightb = 30 + (int)(Math.random() * 250);
             shapeXb = -shapeWidthb;
 
-            if(touchedb == false)
+            if(!touchedb)
             {
                 score = (score * 0.95) - 50;
             }
@@ -129,7 +139,7 @@ public class Shape
             shapeRedb = 0;
         }
 
-        if(input.isTouched() == true)
+        if(input.isTouched())
         {
             if(x < shapeX + shapeWidth && x > shapeX)
             {
@@ -157,7 +167,7 @@ public class Shape
             shapeGreen -= 0.005;
         }
 
-        if(input.isTouched() == true)
+        if(input.isTouched())
         {
             if(x < shapeXa + shapeWidtha && x > shapeXa)
             {
@@ -185,7 +195,7 @@ public class Shape
             shapeBluea -= 0.005;
         }
 
-        if(input.isTouched() == true)
+        if(input.isTouched())
         {
             if(x < shapeXb + shapeWidthb && x > shapeXb)
             {
