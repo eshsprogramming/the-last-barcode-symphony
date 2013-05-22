@@ -26,6 +26,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     private ParallaxBackground rbg;
     private TextureRegion paraBG;
     private float delta = 0.1f;
+    private Score score;
 
     @Override
     public void create()
@@ -36,6 +37,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         paraBG = new TextureRegion(texturebg);
         paraMG = new TextureRegion(texturemg);
         paraclouds = new TextureRegion(clouds);
+        score = Score.getInstance();
         batch = new Sprite();
         redShape = new NewShape();
         greenShape = new NewShape();
@@ -71,6 +73,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         redShape.render(delta);
         greenShape.render(delta);
         blueShape.render(delta);
+        score.render(delta);
     }
 
     @Override
