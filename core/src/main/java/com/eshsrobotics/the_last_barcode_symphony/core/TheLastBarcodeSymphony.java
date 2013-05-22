@@ -23,22 +23,20 @@ public class TheLastBarcodeSymphony extends Game
         setScreen(playScreen);
 
         pauseScreen = new PauseScreen(this);
-        //pauseScreen.create();
     }
     
     @Override
     public void render()
     {
         getScreen().render(delta);
-        if(lifeCount.getLifeCount() == 0)
+        /*if(lifeCount.getLifeCount() == 0)
         {
             setScreen(losingScreen);
-        }
+        }*/
 
         if(Gdx.input.isKeyPressed(Keys.P))
         {
             setScreen(pauseScreen);
         }
     }
-
 }
