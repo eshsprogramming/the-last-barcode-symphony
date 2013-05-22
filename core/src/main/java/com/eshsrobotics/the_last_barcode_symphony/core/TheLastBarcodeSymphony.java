@@ -24,9 +24,9 @@ public class TheLastBarcodeSymphony extends Game
     public void render()
     {
         getScreen().render(delta);
-        if(lifeCount.getLifeCount() == 0)
+        /*if(lifeCount.getLifeCount() == 0)
         {
             setScreen(losingScreen);
-        }
+        }*/
     }
 }

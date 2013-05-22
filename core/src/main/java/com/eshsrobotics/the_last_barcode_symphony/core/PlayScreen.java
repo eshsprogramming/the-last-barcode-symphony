@@ -88,7 +88,7 @@ public class PlayScreen implements Screen
         }
         else if(lifeCount.getLifeCount() == 0)
         {
-            
+            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
         }
         redShape.render(delta);
         greenShape.render(delta);
