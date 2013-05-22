@@ -50,9 +50,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
                                      600,
                                      new Vector2(150, 0));
         batch.create();
-        redShape.create(1,0,0);
-        greenShape.create(0,1,0);
-        blueShape.create(0,0,1);
+        redShape.create(1, 0, 0);
+        greenShape.create(0, 1, 0);
+        blueShape.create(0, 0, 1);
     }
 
     @Override

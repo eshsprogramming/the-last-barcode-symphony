@@ -56,11 +56,11 @@ public class Shape
         font.draw(sprite, Integer.toString(scoreReal), 30, height - 30);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
-        speed = 1 + (int)(score/5500);
+        speed = 1 + (int)(score / 5500);
         shapeX += 1 + speed;
-        speeda = 1 + (int)(score/4500);
+        speeda = 1 + (int)(score / 4500);
         shapeXa += 2 + speeda;
-        speedb = 1 + (int)(score/3500);
+        speedb = 1 + (int)(score / 3500);
         shapeXb += 3 + speedb;
         shape.begin(ShapeType.Filled);
         shape.setColor(0, shapeGreen, 0, 1);
@@ -74,7 +74,7 @@ public class Shape
         shape.setColor(shapeRedb, 0, 0, 1);
         shape.rect(shapeXb, shapeYb, shapeWidthb, shapeHeightb);
         shape.end();
-        
+
         //Cheat code to get up to speed
         if(input.isKeyPressed(Keys.NUM_1))
         {
@@ -97,7 +97,7 @@ public class Shape
             shapeHeight = 30 + (int)(Math.random() * 250);
             shapeWidth = 30 + (int)(Math.random() * 250);
             shapeX = -shapeWidth;
-            
+
             if(!touched)
             {
                 score = (score * 0.85) - 50;
@@ -146,7 +146,7 @@ public class Shape
                 if(y < shapeY + shapeHeight && y > shapeY)
                 {
                     shapeGreen = 1;
-                    score += 0.1 + ((90 * speed) * Math.pow(0.8, (shapeWidth + shapeHeight)/10));
+                    score += 0.1 + ((90 * speed) * Math.pow(0.8, (shapeWidth + shapeHeight) / 10));
                     touched = true;
                 }
 
@@ -174,7 +174,7 @@ public class Shape
                 if(y < shapeYa + shapeHeighta && y > shapeYa)
                 {
                     shapeBluea = 1;
-                    score += 0.1 + ((100 * speeda) * Math.pow(0.8, (shapeWidtha + shapeHeighta)/10));
+                    score += 0.1 + ((100 * speeda) * Math.pow(0.8, (shapeWidtha + shapeHeighta) / 10));
                     toucheda = true;
                 }
 
@@ -202,7 +202,7 @@ public class Shape
                 if(y < shapeYb + shapeHeightb && y > shapeYb)
                 {
                     shapeRedb = 1;
-                    score += 0.1 + ((110 * speedb) * Math.pow(0.8, (shapeWidthb + shapeHeightb)/10));
+                    score += 0.1 + ((110 * speedb) * Math.pow(0.8, (shapeWidthb + shapeHeightb) / 10));
                     touchedb = true;
                 }
 
