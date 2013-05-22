@@ -24,6 +24,8 @@ public class PlayScreen implements Screen
     private Score score;
     private LifeCounter lifeCount;
     private TheLastBarcodeSymphony theLastBarcodeSymphony;
+    private int oldLife = 0;
+    private int timesChanged = 1;
 
     public PlayScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
     {
@@ -64,35 +66,32 @@ public class PlayScreen implements Screen
     {
     }
 
-
     @Override
     public void render(float delta)
     {
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
-        if(lifeCount.getLifeCount() == 3)
+        for(int i = lifeCount.getLifeCount(); i > 0; i--)
         {
-            batch.render(delta, 1);
-            batch.render(delta, 2);
-            batch.render(delta, 3);
+            batch.render(delta, i);
         }
-        else if(lifeCount.getLifeCount() == 2)
+        if(score.getScore() != 0)
         {
-            batch.render(delta, 1);
-            batch.render(delta, 2);
-        }
-        else if(lifeCount.getLifeCount() == 1)
-        {
-            batch.render(delta, 1);
-        }
-        else if(lifeCount.getLifeCount() == 0)
-        {
-            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
+            oldLife = lifeCount.getLifeCount();
+            lifeCount.setLifeCount(lifeCount.getLifeCount() + (int)(score.getScore()/(25000*timesChanged)));
+            if(lifeCount.getLifeCount() == (oldLife+1))
+            {
+                timesChanged += 1;
+            }
         }
         redShape.render(delta);
         greenShape.render(delta);
         blueShape.render(delta);
+        if(lifeCount.getLifeCount() == 0)
+        {
+            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
+        }
         score.render(delta);
     }
 
