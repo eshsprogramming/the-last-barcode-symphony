@@ -40,7 +40,7 @@ public class TheLastBarcodeSymphony extends Game
         }*/
         if(Gdx.input.isKeyPressed(Keys.P))
         {
-            playScreen.pause();
+            setScreen(pauseScreen);
         }
     }
 }
