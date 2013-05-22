@@ -12,6 +12,7 @@ public class LosingScreen implements Screen
     private TheLastBarcodeSymphony theLastBarcodeSymphony;
     BitmapFont font;
     SpriteBatch sprite;
+    Score score;
 
     public LosingScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
     {
@@ -22,6 +23,7 @@ public class LosingScreen implements Screen
     {
         font = new BitmapFont();
         sprite = new SpriteBatch();
+        score = Score.getInstance();
     }
 
     @Override
@@ -32,6 +34,8 @@ public class LosingScreen implements Screen
         
         sprite.begin();
         font.draw(sprite, "You Lose!", 30, Gdx.graphics.getHeight() - 30);
+        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 60);
+        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 90);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
     }
