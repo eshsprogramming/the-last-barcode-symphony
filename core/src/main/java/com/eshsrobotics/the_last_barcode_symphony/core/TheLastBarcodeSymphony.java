@@ -65,7 +65,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
-        batch.render(delta);
+        batch.render(delta, 1);
+        batch.render(delta, 2);
+        batch.render(delta, 3);
         redShape.render(delta);
         greenShape.render(delta);
         blueShape.render(delta);
