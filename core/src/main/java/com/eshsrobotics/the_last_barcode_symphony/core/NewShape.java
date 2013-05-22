@@ -20,6 +20,7 @@ public class NewShape
     private int shapeMaxSize = 250;
     private int shapeMinSize = 30;
     private Score score;
+    private LifeCounter lifeCount;
     
     
     public void create(int red, int green, int blue)
@@ -28,6 +29,7 @@ public class NewShape
         shapeGreen = green;
         shapeBlue = blue;
         score = Score.getInstance();
+        lifeCount = LifeCounter.getInstance();
         reset();
     }
 
@@ -55,6 +57,7 @@ public class NewShape
                 score.setHeight(shapeHeight);
                 score.setWidth(shapeWidth);
                 score.setState(false);
+                lifeCount.setLifeCount(lifeCount.getLifeCount()-1);
             }
 
             reset();
@@ -96,5 +99,4 @@ public class NewShape
         touched = false;
         tempSpeed = (float)((Math.random() * (speed + 1) + (speed - 1))) + (float)(score.getScore()/5000);
     }
-    
 }

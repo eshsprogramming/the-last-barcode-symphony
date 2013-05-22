@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public class TheLastBarcodeSymphony implements ApplicationListener
 {
-    private Sprite batch;
+    private LifeMeter batch;
     //private Shape shape;
     private NewShape redShape;
     private NewShape greenShape;
@@ -23,6 +23,7 @@ public class TheLastBarcodeSymphony implements ApplicationListener
     private TextureRegion paraBG;
     private float delta = 0.1f;
     private Score score;
+    private LifeCounter lifeCount;
 
     @Override
     public void create()
@@ -34,7 +35,8 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         paraMG = new TextureRegion(texturemg);
         paraclouds = new TextureRegion(clouds);
         score = Score.getInstance();
-        batch = new Sprite();
+        lifeCount = LifeCounter.getInstance();
+        batch = new LifeMeter();
         redShape = new NewShape();
         greenShape = new NewShape();
         blueShape = new NewShape();
@@ -65,9 +67,21 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
-        batch.render(delta, 1);
-        batch.render(delta, 2);
-        batch.render(delta, 3);
+        if(lifeCount.getLifeCount() == 3)
+        {
+            batch.render(delta, 1);
+            batch.render(delta, 2);
+            batch.render(delta, 3);
+        }
+        else if(lifeCount.getLifeCount() == 2)
+        {
+            batch.render(delta, 1);
+            batch.render(delta, 2);
+        }
+        else if(lifeCount.getLifeCount() == 1)
+        {
+            batch.render(delta, 1);
+        }
         redShape.render(delta);
         greenShape.render(delta);
         blueShape.render(delta);
