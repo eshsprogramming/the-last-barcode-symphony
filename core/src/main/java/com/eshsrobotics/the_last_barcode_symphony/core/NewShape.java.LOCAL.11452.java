@@ -19,15 +19,13 @@ public class NewShape
     private float tempSpeed;
     private int shapeMaxSize = 250;
     private int shapeMinSize = 30;
-    private Score score;
-    
-    
+
+
     public void create(int red, int green, int blue)
     {
         shapeRed = red;
         shapeGreen = green;
         shapeBlue = blue;
-        score = Score.getInstance();
         reset();
     }
 
@@ -49,11 +47,6 @@ public class NewShape
         {
             if(touched == false)
             {
-                // Watch this...
-                score.setSpeed(tempSpeed);
-                score.setHeight(shapeHeight);
-                score.setWidth(shapeWidth);
-                score.setState(false);
             }
 
             reset();
@@ -65,10 +58,6 @@ public class NewShape
 
             if(input.isTouched() && x <= (shapeX + shapeWidth) && x >= shapeX && y <= (shapeY + shapeHeight) && y >= shapeY)
             {
-                score.setSpeed(tempSpeed);
-                score.setHeight(shapeHeight);
-                score.setWidth(shapeWidth);
-                score.setState(true);
                 color = 1;
                 touched = true;
             }
@@ -93,7 +82,6 @@ public class NewShape
         shapeY = (int)(Math.random() * (Gdx.graphics.getHeight() - shapeHeight));
         color = 0;
         touched = false;
-        tempSpeed = (float)((Math.random() * (speed + 1) + (speed - 1))) + (float)(score.getScore()/5000);
+        tempSpeed = (float)((Math.random() * (speed + 1) + (speed - 1)));
     }
-    
 }

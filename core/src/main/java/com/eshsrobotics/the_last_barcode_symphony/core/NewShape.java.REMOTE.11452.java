@@ -30,21 +30,23 @@ public class NewShape
         score = Score.getInstance();
         reset();
     }
-
+    
     public void render(float delta)
     {
         Input input = Gdx.input;
         int x = input.getX(),
             y = Gdx.graphics.getHeight() - input.getY();
-        shape.setColor(shapeRed * color, shapeGreen * color, shapeBlue * color, 1);
+        
+        shape.setColor(shapeRed * color,shapeGreen * color,shapeBlue * color, 1);
         shape.begin(ShapeType.Filled);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
         shape.end();
-        shape.setColor(0, 0, 0, 1);
+        
+        shape.setColor(0,0,0,1);
         shape.begin(ShapeType.Line);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
         shape.end();
-
+        
         if(shapeX > Gdx.graphics.getWidth())
         {
             if(touched == false)
@@ -55,14 +57,11 @@ public class NewShape
                 score.setWidth(shapeWidth);
                 score.setState(false);
             }
-
             reset();
         }
-
         else
         {
             shapeX += tempSpeed;
-
             if(input.isTouched() && x <= (shapeX + shapeWidth) && x >= shapeX && y <= (shapeY + shapeHeight) && y >= shapeY)
             {
                 score.setSpeed(tempSpeed);
@@ -73,22 +72,21 @@ public class NewShape
                 touched = true;
             }
         }
-
+        
         if(color > 0)
         {
             color -= 0.005;
         }
-
         else
         {
             color = 0;
         }
     }
-
+    
     public void reset()
     {
-        shapeHeight = (int)((Math.random() * (shapeMaxSize - shapeMinSize)) + shapeMinSize);
-        shapeWidth = (int)((Math.random() * (shapeMaxSize - shapeMinSize)) + shapeMinSize);
+        shapeHeight = (int)((Math.random() * (shapeMaxSize - shapeMinSize))+shapeMinSize);
+        shapeWidth = (int)((Math.random() * (shapeMaxSize - shapeMinSize))+shapeMinSize);
         shapeX = -shapeWidth;
         shapeY = (int)(Math.random() * (Gdx.graphics.getHeight() - shapeHeight));
         color = 0;
