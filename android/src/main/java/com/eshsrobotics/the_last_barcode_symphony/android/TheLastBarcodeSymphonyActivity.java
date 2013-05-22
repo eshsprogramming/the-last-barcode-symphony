@@ -1,6 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.android;
 
-import com.eshsrobotics.the_last_barcode_symphony.core.TheLastBarcodeSymphony;
+import com.eshsrobotics.the_last_barcode_symphony.core.PlayScreen;
 
 import android.os.Bundle;
 
@@ -16,6 +16,6 @@ public class TheLastBarcodeSymphonyActivity extends AndroidApplication
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.useGL20 = true;
-        initialize(new TheLastBarcodeSymphony(), config);
+        initialize(new PlayScreen(), config);
     }
 }

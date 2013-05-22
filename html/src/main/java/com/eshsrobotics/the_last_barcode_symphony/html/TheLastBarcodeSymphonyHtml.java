@@ -1,6 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.html;
 
-import com.eshsrobotics.the_last_barcode_symphony.core.TheLastBarcodeSymphony;
+import com.eshsrobotics.the_last_barcode_symphony.core.PlayScreen;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.backends.gwt.GwtApplication;
@@ -11,7 +11,7 @@ public class TheLastBarcodeSymphonyHtml extends GwtApplication
     @Override
     public ApplicationListener getApplicationListener()
     {
-        return new TheLastBarcodeSymphony();
+        return new PlayScreen();
     }
 
     @Override
