@@ -50,9 +50,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
                                      600,
                                      new Vector2(150, 0));
         batch.create();
-        redShape.create(255,0,0);
-        greenShape.create(0,255,0);
-        blueShape.create(0,0,255);
+        redShape.create(1,0,0);
+        greenShape.create(0,1,0);
+        blueShape.create(0,0,1);
     }
 
     @Override
@@ -68,9 +68,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
         batch.render(delta);
-        redShape.render();
-        greenShape.render();
-        blueShape.render();
+        redShape.render(delta);
+        greenShape.render(delta);
+        blueShape.render(delta);
     }
 
     @Override
