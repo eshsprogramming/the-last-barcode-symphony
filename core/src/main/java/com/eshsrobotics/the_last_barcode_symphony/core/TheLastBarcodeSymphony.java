@@ -14,7 +14,10 @@ import com.badlogic.gdx.math.Vector2;
 public class TheLastBarcodeSymphony implements ApplicationListener
 {
     private Sprite batch;
-    private Shape shape;
+    //private Shape shape;
+    private NewShape redShape;
+    private NewShape greenShape;
+    private NewShape blueShape;
     private Texture texturebg;
     private Texture texturemg;
     private Texture clouds;
@@ -34,7 +37,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         paraMG = new TextureRegion(texturemg);
         paraclouds = new TextureRegion(clouds);
         batch = new Sprite();
-        shape = new Shape();
+        redShape = new NewShape();
+        greenShape = new NewShape();
+        blueShape = new NewShape();
         rbg = new ParallaxBackground(new ParallaxLayer[]
                                      {
                                          new ParallaxLayer(paraBG, new Vector2(0.01f, 0), new Vector2(0, 0)),
@@ -45,7 +50,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
                                      600,
                                      new Vector2(150, 0));
         batch.create();
-        shape.create();
+        redShape.create(255,0,0);
+        greenShape.create(0,255,0);
+        blueShape.create(0,0,255);
     }
 
     @Override
@@ -61,7 +68,9 @@ public class TheLastBarcodeSymphony implements ApplicationListener
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         rbg.render(delta);
         batch.render(delta);
-        shape.render(delta);
+        redShape.render();
+        greenShape.render();
+        blueShape.render();
     }
 
     @Override
