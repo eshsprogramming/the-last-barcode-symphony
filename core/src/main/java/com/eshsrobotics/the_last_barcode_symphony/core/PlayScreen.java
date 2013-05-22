@@ -1,6 +1,5 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
@@ -86,6 +85,10 @@ public class PlayScreen implements Screen
         else if(lifeCount.getLifeCount() == 1)
         {
             batch.render(delta, 1);
+        }
+        else if(lifeCount.getLifeCount() == 0)
+        {
+            
         }
         redShape.render(delta);
         greenShape.render(delta);
