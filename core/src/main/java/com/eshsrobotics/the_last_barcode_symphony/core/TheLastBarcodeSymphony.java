@@ -1,10 +1,13 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 
 public class TheLastBarcodeSymphony extends Game
 {
     PlayScreen playScreen;
+    PauseScreen pauseScreen;
     LosingScreen losingScreen;
     LifeCounter lifeCount;
     float delta = 0.1f;
@@ -18,6 +21,9 @@ public class TheLastBarcodeSymphony extends Game
         playScreen.create();
         losingScreen.create();
         setScreen(playScreen);
+
+        pauseScreen = new PauseScreen(this);
+        //pauseScreen.create();
     }
     
     @Override
@@ -28,5 +34,11 @@ public class TheLastBarcodeSymphony extends Game
         {
             setScreen(losingScreen);
         }
+
+        if(Gdx.input.isKeyPressed(Keys.P))
+        {
+            setScreen(pauseScreen);
+        }
     }
+
 }
