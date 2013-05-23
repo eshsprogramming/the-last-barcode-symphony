@@ -16,6 +16,6 @@ public class TheLastBarcodeSymphonyActivity extends AndroidApplication
         super.onCreate(savedInstanceState);
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.useGL20 = true;
-        initialize(new PlayScreen(), config);
+        initialize(new TheLastBarcodeSymphony(), config);
     }
 }
