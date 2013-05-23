@@ -1,4 +1,4 @@
-The Last Barcode Symphony
+The Last Barcode Symphony [![Build Status](http://ci.eshsrobotics.com/jenkins/job/the-last-barcode-symphony/badge/icon)](http://ci.eshsrobotics.com/jenkins/job/the-last-barcode-symphony/)
 =========================
 
 Barcodes be barcoding.
