@@ -96,6 +96,7 @@ public class PlayScreen implements Screen
         {
             theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
             hS.putInteger(Integer.toString(userIdent), (int)(score.getScore()));
+            hS.flush();
         }
         
         if(score.getScore() != 0)
