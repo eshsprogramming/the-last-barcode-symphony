@@ -1,6 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.android;
 
-import com.eshsrobotics.the_last_barcode_symphony.core.PlayScreen;
+import com.eshsrobotics.the_last_barcode_symphony.core.TheLastBarcodeSymphony;
 
 import android.os.Bundle;
 
