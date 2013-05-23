@@ -1,6 +1,7 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
@@ -23,6 +24,8 @@ public class PlayScreen implements Screen
     private TheLastBarcodeSymphony theLastBarcodeSymphony;
     private int oldLife = 0;
     private int timesChanged = 1;
+    private Preferences hS;
+    private int userIdent = 0;
 
     public PlayScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
     {
@@ -33,12 +36,6 @@ public class PlayScreen implements Screen
     {
         texturebg = new Texture(Gdx.files.internal("BGBC.png"));
         paraBG = new TextureRegion(texturebg);
-        score = Score.getInstance();
-        lifeCount = LifeCounter.getInstance();
-        lifeMeter = new LifeMeter();
-        redShape = new NewShape();
-        greenShape = new NewShape();
-        blueShape = new NewShape();
         rbg = new ParallaxBackground(new ParallaxLayer[]
                                      {
                                          new ParallaxLayer(paraBG, new Vector2(0.01f, 0), new Vector2(0, 0)),
@@ -46,11 +43,27 @@ public class PlayScreen implements Screen
                                      800,
                                      600,
                                      new Vector2(150, 0));
+        
+        score = Score.getInstance();
+        
+        lifeCount = LifeCounter.getInstance();
+        lifeMeter = new LifeMeter();
+        
+        redShape = new NewShape();
+        greenShape = new NewShape();
+        blueShape = new NewShape();
+        
+        batch = new SpriteBatch();
+        
         lifeMeter.create();
+        
         redShape.create(1, 0, 0);
         greenShape.create(0, 1, 0);
         blueShape.create(0, 0, 1);
-        batch = new SpriteBatch();
+        
+        hS = Gdx.app.getPreferences("Highscores");
+        
+        setUserIdent((int)(Math.random()*100000));
     }
 
     @Override
@@ -63,13 +76,28 @@ public class PlayScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
+        
         rbg.render(delta);
+        
+        redShape.render(delta);
+        greenShape.render(delta);
+        blueShape.render(delta);
+        
+        score.render(delta);
+        
         batch.begin();
         for(int i = lifeCount.getLifeCount(); i > 0; i--)
         {
             lifeMeter.render(delta, i, batch);
         }
         batch.end();
+        
+        if(lifeCount.getLifeCount() <= 0)
+        {
+            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
+            hS.putInteger(Integer.toString(userIdent), (int)(score.getScore()));
+        }
+        
         if(score.getScore() != 0)
         {
             oldLife = lifeCount.getLifeCount();
@@ -79,14 +107,6 @@ public class PlayScreen implements Screen
                 timesChanged += 1;
             }
         }
-        redShape.render(delta);
-        greenShape.render(delta);
-        blueShape.render(delta);
-        if(lifeCount.getLifeCount() <= 0)
-        {
-            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
-        }
-        score.render(delta);
     }
 
     @Override
@@ -105,15 +125,26 @@ public class PlayScreen implements Screen
     }
 
     @Override
-    public void show() {
+    public void show() 
+    {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public void hide() {
+    public void hide() 
+    {
         // TODO Auto-generated method stub
         
     }
 
+    public int getUserIdent() 
+    {
+        return userIdent;
+    }
+
+    public void setUserIdent(int userIdent) 
+    {
+        this.userIdent = userIdent;
+    }
 }

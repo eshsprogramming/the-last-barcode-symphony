@@ -34,8 +34,10 @@ public class LosingScreen implements Screen
         
         sprite.begin();
         font.draw(sprite, "You Lose!", 30, Gdx.graphics.getHeight() - 30);
-        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 60);
-        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 90);
+        font.draw(sprite, "Your user identification number is:", 30, Gdx.graphics.getHeight() - 60);
+        font.draw(sprite, Integer.toString(theLastBarcodeSymphony.userIdent), 30, Gdx.graphics.getHeight() - 80);
+        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 110);
+        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 130);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
     }

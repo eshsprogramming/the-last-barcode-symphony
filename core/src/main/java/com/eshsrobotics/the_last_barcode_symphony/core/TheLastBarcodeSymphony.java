@@ -11,7 +11,7 @@ public class TheLastBarcodeSymphony extends Game
     PauseScreen pauseScreen;
     MainMenu mainMenu;
     LosingScreen losingScreen;
-
+    int userIdent = 0;
     LifeCounter lifeCount;
     float delta = 0.1f;
     Music music;
@@ -28,7 +28,7 @@ public class TheLastBarcodeSymphony extends Game
         music.play();
         mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
-
+        userIdent = playScreen.getUserIdent();
         setScreen(mainMenu);
     }
     
