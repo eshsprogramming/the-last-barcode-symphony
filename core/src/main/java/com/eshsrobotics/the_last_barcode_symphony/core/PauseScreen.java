@@ -26,12 +26,12 @@ public class PauseScreen implements Screen
 
         resumeButton.setColor(0, 1, 0, 1);
         resumeButton.begin(ShapeType.Filled);
-        resumeButton.rect(300, 300, 50, 50);
+        resumeButton.rect(Gdx.graphics.getWidth()/2-50, (3*Gdx.graphics.getHeight())/4-25, 100, 50);
         resumeButton.end();
 
         mainMenuButton.setColor(1, 0, 0, 1);
         mainMenuButton.begin(ShapeType.Filled);
-        mainMenuButton.rect(300, 100, 50, 50);
+        mainMenuButton.rect(Gdx.graphics.getWidth()/2-50, Gdx.graphics.getHeight()/4-25, 100, 50);
         mainMenuButton.end();
     }
 

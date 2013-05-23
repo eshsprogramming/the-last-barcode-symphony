@@ -37,9 +37,19 @@ public class TheLastBarcodeSymphony extends Game
     {
         getScreen().render(delta);
 
-        if(Gdx.input.isKeyPressed(Keys.P))
+        if(getScreen() == pauseScreen)
         {
-            setScreen(pauseScreen);
+            if(Gdx.input.isKeyPressed(Keys.P))
+            {
+                setScreen(playScreen);
+            }
+        }
+        else
+        {
+            if(Gdx.input.isKeyPressed(Keys.P) && getScreen() != mainMenu)
+            {
+                setScreen(pauseScreen);
+            }
         }
 
         if(Gdx.input.isKeyPressed(Keys.ENTER))
