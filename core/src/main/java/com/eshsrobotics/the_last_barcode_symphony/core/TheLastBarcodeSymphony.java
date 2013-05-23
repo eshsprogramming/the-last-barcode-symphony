@@ -9,10 +9,11 @@ public class TheLastBarcodeSymphony extends Game
 {
     PlayScreen playScreen;
     PauseScreen pauseScreen;
+    MainMenu mainMenu;
     LosingScreen losingScreen;
+
     LifeCounter lifeCount;
     float delta = 0.1f;
-    boolean isPaused = false;
     Music music;
     
     @Override
@@ -23,24 +24,27 @@ public class TheLastBarcodeSymphony extends Game
         lifeCount = LifeCounter.getInstance();
         playScreen.create();
         losingScreen.create();
-        setScreen(playScreen);
         music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
         music.play();
-
+        mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
+
+        setScreen(mainMenu);
     }
     
     @Override
     public void render()
     {
         getScreen().render(delta);
-        /*if(lifeCount.getLifeCount() == 0)
-        {
-            setScreen(losingScreen);
-        }*/
+
         if(Gdx.input.isKeyPressed(Keys.P))
         {
             setScreen(pauseScreen);
+        }
+
+        if(Gdx.input.isKeyPressed(Keys.ENTER))
+        {
+            setScreen(playScreen);
         }
     }
 }
