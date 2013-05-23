@@ -6,22 +6,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class LifeMeter
 {
-    private SpriteBatch batch;
     private Texture texture;
     int spriteX = 100;
     int spriteY = Gdx.graphics.getHeight()-48;
 
     public void create()
     {
-        batch = new SpriteBatch();
         texture = new Texture(Gdx.files.internal("Test.png"));
     }
 
-    public void render(float delta, int number)
+    public void render(float delta, int number, SpriteBatch batch)
     {
         spriteX = Gdx.graphics.getWidth()-number*48;
-        batch.begin();
+        //batch.begin();
         batch.draw(texture, spriteX, spriteY);
-        batch.end();
+        //batch.end();
     }
 }
