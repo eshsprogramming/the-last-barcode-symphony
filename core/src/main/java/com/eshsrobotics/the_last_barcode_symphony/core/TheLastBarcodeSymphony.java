@@ -18,7 +18,6 @@ public class TheLastBarcodeSymphony extends Game
     Music music;
 
     int userIdent = 0;
-    float delta = 0.1f;
 
     @Override
     public void create() 
@@ -47,7 +46,7 @@ public class TheLastBarcodeSymphony extends Game
     @Override
     public void render()
     {
-        getScreen().render(delta);
+        getScreen().render(Gdx.graphics.getDeltaTime());
 
         if(getScreen() == pauseScreen)
         {
