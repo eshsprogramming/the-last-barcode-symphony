@@ -16,10 +16,8 @@ public class TheLastBarcodeSymphony extends Game
     MainMenu mainMenu;
     LosingScreen losingScreen;
 
-    LifeCounter lifeCount;
     Music music;
-
-    int userIdent = 0;
+    Highscores highscore;
 
     @Override
     public void create() 
@@ -31,11 +29,10 @@ public class TheLastBarcodeSymphony extends Game
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
-        losingScreen.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
-
-        lifeCount = LifeCounter.getInstance();
-        userIdent = playScreen.getUserIdent();
+        
+        highscore = Highscores.getInstance();
+        highscore.loadHighscores();
 
         music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
         music.play();

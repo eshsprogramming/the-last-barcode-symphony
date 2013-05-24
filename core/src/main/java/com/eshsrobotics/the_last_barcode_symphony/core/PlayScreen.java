@@ -22,10 +22,9 @@ public class PlayScreen implements Screen
     private Score score;
     private LifeCounter lifeCount;
     private TheLastBarcodeSymphony theLastBarcodeSymphony;
+    private Highscores highscore = Highscores.getInstance();
     private int oldLife = 0;
     private int timesChanged = 1;
-    private Preferences hS;
-    private int userIdent = 0;
 
     public PlayScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
     {
@@ -60,10 +59,6 @@ public class PlayScreen implements Screen
         redShape.create(1, 0, 0);
         greenShape.create(0, 1, 0);
         blueShape.create(0, 0, 1);
-        
-        hS = Gdx.app.getPreferences("Highscores");
-        
-        setUserIdent((int)(Math.random()*100000));
     }
 
     @Override
@@ -94,9 +89,10 @@ public class PlayScreen implements Screen
         
         if(lifeCount.getLifeCount() <= 0)
         {
+            highscore.writeHighscore((int)(score.getScore()));
+            highscore.saveHighscore();
             theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
-            hS.putInteger(Integer.toString(userIdent), (int)(score.getScore()));
-            hS.flush();
+
         }
         
         if(score.getScore() != 0)
@@ -137,15 +133,5 @@ public class PlayScreen implements Screen
     {
         // TODO Auto-generated method stub
         
-    }
-
-    public int getUserIdent() 
-    {
-        return userIdent;
-    }
-
-    public void setUserIdent(int userIdent) 
-    {
-        this.userIdent = userIdent;
     }
 }
