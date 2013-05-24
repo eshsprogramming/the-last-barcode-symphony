@@ -7,29 +7,41 @@ import com.badlogic.gdx.audio.Music;
 
 public class TheLastBarcodeSymphony extends Game
 {
+    public static String TAG = TheLastBarcodeSymphony.class.getSimpleName();
+
     PlayScreen playScreen;
     PauseScreen pauseScreen;
     MainMenu mainMenu;
     LosingScreen losingScreen;
-    int userIdent = 0;
+
     LifeCounter lifeCount;
-    float delta = 0.1f;
     Music music;
-    
+
+    int userIdent = 0;
+    float delta = 0.1f;
+
     @Override
     public void create() 
     {
         playScreen = new PlayScreen(this);
         losingScreen = new LosingScreen(this);
-        lifeCount = LifeCounter.getInstance();
-        playScreen.create();
-        losingScreen.create();
-        music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
-        music.play();
         mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
+        Gdx.app.log(TAG, "Instantiated screens!");
+
+        playScreen.create();
+        losingScreen.create();
+        Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
+
+        lifeCount = LifeCounter.getInstance();
         userIdent = playScreen.getUserIdent();
+
+        music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
+        music.play();
+        Gdx.app.log(TAG, "Started playing music.");
+
         setScreen(mainMenu);
+        Gdx.app.log(TAG, "Set screen to main menu.");
     }
     
     @Override
@@ -42,6 +54,7 @@ public class TheLastBarcodeSymphony extends Game
             if(Gdx.input.isKeyPressed(Keys.P))
             {
                 setScreen(playScreen);
+                Gdx.app.log(TAG, "Set screen to play screen.");
             }
         }
         else
@@ -49,12 +62,14 @@ public class TheLastBarcodeSymphony extends Game
             if(Gdx.input.isKeyPressed(Keys.P) && getScreen() != mainMenu)
             {
                 setScreen(pauseScreen);
+                Gdx.app.log(TAG, "Set screen to pause screen.");
             }
         }
 
         if(Gdx.input.isKeyPressed(Keys.ENTER))
         {
             setScreen(playScreen);
+            Gdx.app.log(TAG, "Set screen to play screen.");
         }
     }
 }
