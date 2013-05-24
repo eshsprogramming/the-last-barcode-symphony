@@ -14,7 +14,7 @@ public class LosingScreen implements Screen
     private SpriteBatch sprite = new SpriteBatch();
     private Score score = Score.getInstance();
     private Highscores highscore = Highscores.getInstance();
-    private String whichHighscore = "";
+    private String isHighscore = "";
 
     public LosingScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
     {
@@ -26,22 +26,22 @@ public class LosingScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
+        highscore.saveHighscore();
         
-        if(highscore.getWhichHighscore() != 0)
+        if(highscore.isIsHighscore() == true)
         {
-            whichHighscore = Integer.toString(highscore.getWhichHighscore());
+            isHighscore = "You got a highscore!";
         }
         else
         {
-            whichHighscore = "None :(";
+            isHighscore = "You didn't get a highscore.";
         }
         
         sprite.begin();
         font.draw(sprite, "You Lose!", 30, Gdx.graphics.getHeight() - 30);
-        font.draw(sprite, "Your highscore ranking is:", 30, Gdx.graphics.getHeight() - 60);
-        font.draw(sprite, whichHighscore, 30, Gdx.graphics.getHeight() - 80);
-        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 110);
-        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 130);
+        font.draw(sprite, isHighscore, 30, Gdx.graphics.getHeight() - 60);
+        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 90);
+        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 110);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
     }

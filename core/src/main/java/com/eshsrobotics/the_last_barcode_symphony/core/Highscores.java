@@ -8,7 +8,7 @@ public class Highscores
     private Preferences hS = Gdx.app.getPreferences("Highscores");
     public static Highscores instance = new Highscores();
     private int[] highscores = new int[5];
-    private int whichHighscore = 0;
+    private boolean isHighscore = false;
     
     public static Highscores getInstance()
     {
@@ -17,7 +17,7 @@ public class Highscores
     
     public void loadHighscores()
     {
-        for(int i = 0; i == 4; i++)
+        for(int i = 0; i <= 4; i++)
         {
             highscores[i] = hS.getInteger(Integer.toString(i), (i+1)*10000);
         }
@@ -25,12 +25,12 @@ public class Highscores
     
     public void writeHighscore(int score)
     {
-        for(int i = 4; i == 0; i--)
+        for(int i = 4; i >= 0; i--)
         {
             if(score > highscores[i])
             {
                 highscores[i] = score;
-                whichHighscore = i+1;
+                isHighscore = true;
                 break;
             }
         }
@@ -38,7 +38,7 @@ public class Highscores
     
     public void saveHighscore()
     {
-        for(int i = 0; i == 4; i++)
+        for(int i = 0; i <= 4; i++)
         {
             if(highscores[i] > hS.getInteger(Integer.toString(i), (i+1)*10000))
             {
@@ -46,19 +46,20 @@ public class Highscores
                 {
                     hS.putInteger(Integer.toString(index), index+1);
                 }
+                hS.putInteger(Integer.toString(i), highscores[i]);
+                //isHighscore = true;
             }
-            hS.putInteger(Integer.toString(i), highscores[i]);
             hS.flush();
         }
     }
 
-    public int getWhichHighscore() 
+    public boolean isIsHighscore() 
     {
-        return whichHighscore;
+        return isHighscore;
     }
 
-    public void setWhichHighscore(int whichHighscore) 
+    public void setIsHighscore(boolean isHighscore) 
     {
-        this.whichHighscore = whichHighscore;
+        this.isHighscore = isHighscore;
     }
 }
