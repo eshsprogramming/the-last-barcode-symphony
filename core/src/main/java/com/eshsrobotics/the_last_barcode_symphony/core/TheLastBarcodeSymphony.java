@@ -4,10 +4,12 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.FPSLogger;
 
 public class TheLastBarcodeSymphony extends Game
 {
-    public static String TAG = TheLastBarcodeSymphony.class.getSimpleName();
+    public static final String TAG = TheLastBarcodeSymphony.class.getSimpleName();
+    public static final FPSLogger FPS_LOGGER = new FPSLogger();
 
     PlayScreen playScreen;
     PauseScreen pauseScreen;
@@ -47,6 +49,7 @@ public class TheLastBarcodeSymphony extends Game
     public void render()
     {
         getScreen().render(Gdx.graphics.getDeltaTime());
+        FPS_LOGGER.log();
 
         if(getScreen() == pauseScreen)
         {
