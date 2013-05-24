@@ -11,6 +11,7 @@ public class TheLastBarcodeSymphonyDesktop
     {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.useGL20 = true;
+        config.title = "The Last Barcode Symphony";
         new LwjglApplication(new TheLastBarcodeSymphony(), config);
     }
 }
