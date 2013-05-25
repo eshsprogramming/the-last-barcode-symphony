@@ -1,0 +1,12 @@
+d:./:0:application/unknown
+a:Beethoven5th.mp3:6005376:application/unknown
+i:BGBC.png:31721:image/png
+i:Clouds.png:21395:image/png
+i:libgdx-logo.png:78970:image/png
+i:MGBC.png:18302:image/png
+i:Test.png:356:image/png
+b:Thumbs.db:89600:application/unknown
+t:com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl:2683:application/unknown
+t:com/badlogic/gdx/graphics/g3d/shaders/default.vertex.glsl:7562:application/unknown
+t:com/badlogic/gdx/utils/arial-15.fnt:21743:application/unknown
+i:com/badlogic/gdx/utils/arial-15.png:21814:image/png
