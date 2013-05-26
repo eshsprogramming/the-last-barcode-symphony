@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 public class NewShape
 {
     private ShapeRenderer shape = new ShapeRenderer();
-    private int shapeRed, shapeGreen, shapeBlue;
+    private Float shapeRed, shapeGreen, shapeBlue;
     private int shapeHeight;
     private int shapeWidth;
     private float shapeX;
@@ -23,11 +23,11 @@ public class NewShape
     private LifeCounter lifeCount;
     
     
-    public void create(int red, int green, int blue)
+    public void create()//int red, int green, int blue)
     {
-        shapeRed = red;
-        shapeGreen = green;
-        shapeBlue = blue;
+        //shapeRed = red;
+        //shapeGreen = green;
+        //shapeBlue = blue;
         score = Score.getInstance();
         lifeCount = LifeCounter.getInstance();
         reset();
@@ -98,5 +98,8 @@ public class NewShape
         color = 0;
         touched = false;
         tempSpeed = (float)((Math.random() * (speed + 100)) + (speed - 100)) + (float)(score.getScore()/5000);
+        shapeRed = (float)(Math.random());
+        shapeGreen = (float)(Math.random());
+        shapeBlue = (float)(Math.random());
     }
 }

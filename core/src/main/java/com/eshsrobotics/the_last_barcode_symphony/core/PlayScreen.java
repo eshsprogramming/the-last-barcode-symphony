@@ -13,9 +13,12 @@ public class PlayScreen implements Screen
 {
     private LifeMeter lifeMeter;
     private SpriteBatch batch;
-    private NewShape redShape;
-    private NewShape greenShape;
-    private NewShape blueShape;
+    //private NewShape redShape;
+    //private NewShape greenShape;
+    //private NewShape blueShape;
+    private NewShape shapeA;
+    private NewShape shapeB;
+    private NewShape shapeC;
     private Texture texturebg;
     private ParallaxBackground rbg;
     private TextureRegion paraBG;
@@ -47,18 +50,26 @@ public class PlayScreen implements Screen
         
         lifeCount = LifeCounter.getInstance();
         lifeMeter = new LifeMeter();
-        
-        redShape = new NewShape();
-        greenShape = new NewShape();
-        blueShape = new NewShape();
+
+        //redShape = new NewShape();
+        //greenShape = new NewShape();
+        //blueShape = new NewShape();
+
+        shapeA = new NewShape();
+        shapeB = new NewShape();
+        shapeC = new NewShape();
         
         batch = new SpriteBatch();
         
         lifeMeter.create();
         
-        redShape.create(1, 0, 0);
-        greenShape.create(0, 1, 0);
-        blueShape.create(0, 0, 1);
+        //redShape.create(1, 0, 0);
+        //greenShape.create(0, 1, 0);
+        //blueShape.create(0, 0, 1);
+
+        shapeA.create();
+        shapeB.create();
+        shapeC.create();
     }
 
     @Override
@@ -73,11 +84,15 @@ public class PlayScreen implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         
         rbg.render(delta);
-        
-        redShape.render(delta);
-        greenShape.render(delta);
-        blueShape.render(delta);
-        
+
+        //redShape.render(delta);
+        //greenShape.render(delta);
+        //blueShape.render(delta);
+
+        shapeA.render(delta);
+        shapeB.render(delta);
+        shapeC.render(delta);
+
         score.render(delta);
         
         batch.begin();
