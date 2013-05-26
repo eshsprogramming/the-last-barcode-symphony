@@ -15,7 +15,7 @@ public class NewShape
     private float shapeY;
     private float color;
     private boolean touched;
-    private int speed = 200;
+    private float speed = 200;
     private float tempSpeed;
     private int shapeMaxSize = 250;
     private int shapeMinSize = 30;
@@ -97,7 +97,8 @@ public class NewShape
         shapeY = (int)(Math.random() * (Gdx.graphics.getHeight() - shapeHeight));
         color = 0;
         touched = false;
-        tempSpeed = (float)((Math.random() * (speed + 100)) + (speed - 100)) + (float)(score.getScore()/5000);
+        speed = 200 + (float)(score.getScore()/50);
+        tempSpeed = (float)((Math.random() * 100) + (speed - 50));
         shapeRed = (float)(Math.random());
         shapeGreen = (float)(Math.random());
         shapeBlue = (float)(Math.random());
