@@ -65,7 +65,7 @@ public class TheLastBarcodeSymphony extends Game
             }
         }
 
-        if(Gdx.input.isKeyPressed(Keys.ENTER))
+        if(Gdx.input.isKeyPressed(Keys.ENTER) && getScreen() != losingScreen)
         {
             setScreen(playScreen);
             Gdx.app.log(TAG, "Set screen to play screen.");
