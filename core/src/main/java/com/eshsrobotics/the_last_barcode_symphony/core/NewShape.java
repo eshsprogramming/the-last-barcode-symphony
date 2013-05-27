@@ -43,7 +43,7 @@ public class NewShape
 
         if(shapeX > Gdx.graphics.getWidth())
         {
-            if(touched == false)
+            if(!touched)
             {
                 // Watch this...
                 score.setSpeed(tempSpeed/100);
