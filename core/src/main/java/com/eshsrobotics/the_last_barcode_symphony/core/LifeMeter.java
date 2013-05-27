@@ -12,7 +12,7 @@ public class LifeMeter
 
     public void create()
     {
-        texture = new Texture(Gdx.files.internal("Test.png"));
+        texture = new Texture(Gdx.files.internal("LifeIcon.png"));
     }
 
     public void render(float delta, int number, SpriteBatch batch)
