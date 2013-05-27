@@ -38,7 +38,6 @@ public class Highscores
                 for(int index = 0; index < i; index++)
                 {
                     highscores[index] = highscores[index+1];
-                    System.out.println("test3");
                 }
                 highscores[i] = score;
                 isHighscore = true;
