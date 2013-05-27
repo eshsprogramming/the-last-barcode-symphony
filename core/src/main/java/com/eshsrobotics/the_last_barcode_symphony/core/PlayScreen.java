@@ -51,10 +51,6 @@ public class PlayScreen implements Screen
         lifeCount = LifeCounter.getInstance();
         lifeMeter = new LifeMeter();
 
-        //redShape = new NewShape();
-        //greenShape = new NewShape();
-        //blueShape = new NewShape();
-
         shapeA = new NewShape();
         shapeB = new NewShape();
         shapeC = new NewShape();
@@ -62,10 +58,6 @@ public class PlayScreen implements Screen
         batch = new SpriteBatch();
         
         lifeMeter.create();
-        
-        //redShape.create(1, 0, 0);
-        //greenShape.create(0, 1, 0);
-        //blueShape.create(0, 0, 1);
 
         shapeA.create();
         shapeB.create();
@@ -84,10 +76,6 @@ public class PlayScreen implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         
         rbg.render(delta);
-
-        //redShape.render(delta);
-        //greenShape.render(delta);
-        //blueShape.render(delta);
 
         shapeA.render(delta);
         shapeB.render(delta);
@@ -118,6 +106,17 @@ public class PlayScreen implements Screen
             {
                 timesChanged += 1;
             }
+        }
+
+        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !theLastBarcodeSymphony.music.isPlaying())
+        {
+            theLastBarcodeSymphony.music.play();
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"playing music.");
+        }
+        else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && theLastBarcodeSymphony.music.isPlaying())
+        {
+            theLastBarcodeSymphony.music.pause();
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"stopping music.");
         }
     }
 

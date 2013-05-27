@@ -23,11 +23,8 @@ public class NewShape
     private LifeCounter lifeCount;
     
     
-    public void create()//int red, int green, int blue)
+    public void create()
     {
-        //shapeRed = red;
-        //shapeGreen = green;
-        //shapeBlue = blue;
         score = Score.getInstance();
         lifeCount = LifeCounter.getInstance();
         reset();
@@ -35,10 +32,6 @@ public class NewShape
 
     public void render(float delta)
     {
-        Input input = Gdx.input;
-        int x = input.getX(),
-            y = Gdx.graphics.getHeight() - input.getY();
-        
         shape.setColor(shapeRed * color,shapeGreen * color,shapeBlue * color, 1);
         shape.begin(ShapeType.Filled);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
@@ -67,7 +60,7 @@ public class NewShape
         {
             shapeX += tempSpeed*delta;
 
-            if(input.isTouched() && x <= (shapeX + shapeWidth) && x >= shapeX && y <= (shapeY + shapeHeight) && y >= shapeY)
+            if(beingTouched())
             {
                 score.setSpeed(tempSpeed/100);
                 score.setHeight(shapeHeight);
@@ -102,5 +95,22 @@ public class NewShape
         shapeRed = (float)(Math.random());
         shapeGreen = (float)(Math.random());
         shapeBlue = (float)(Math.random());
+    }
+
+    public boolean isTouched()
+    {
+        return touched;
+    }
+
+    public boolean beingTouched()
+    {
+        if(Gdx.input.isTouched() && Gdx.input.getX() <= (shapeX + shapeWidth) && Gdx.input.getX() >= shapeX && Gdx.graphics.getHeight() - Gdx.input.getY() <= (shapeY + shapeHeight) && Gdx.graphics.getHeight() - Gdx.input.getY() >= shapeY)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
