@@ -97,7 +97,7 @@ public class NewShape
         shapeY = (int)(Math.random() * (Gdx.graphics.getHeight() - shapeHeight));
         color = 0;
         touched = false;
-        speed = 200 + (float)(score.getScore()/50);
+        speed = 175 + (float)(score.getScore()/75);
         tempSpeed = (float)((Math.random() * 100) + (speed - 50));
         shapeRed = (float)(Math.random());
         shapeGreen = (float)(Math.random());

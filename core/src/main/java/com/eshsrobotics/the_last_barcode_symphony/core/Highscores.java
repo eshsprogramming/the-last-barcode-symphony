@@ -20,6 +20,12 @@ public class Highscores
         for(int i = 0; i <= 4; i++)
         {
             highscores[i] = hS.getInteger(Integer.toString(i), (i+1)*10000);
+            
+            /*Note: For now, uncomment the two lines below and comment out the
+            line above if you need to clear your highscores.*/
+            
+            //hS.putInteger(Integer.toString(i), (i+1)*10000);
+            //hS.flush();
         }
     }
     
@@ -29,6 +35,11 @@ public class Highscores
         {
             if(score > highscores[i])
             {
+                for(int index = i-1; index >= 0; index--)
+                {
+                    highscores[index] = highscores[index+1];
+                    System.out.println("test3");
+                }
                 highscores[i] = score;
                 isHighscore = true;
                 break;
@@ -40,17 +51,10 @@ public class Highscores
     {
         for(int i = 0; i <= 4; i++)
         {
-            if(highscores[i] > hS.getInteger(Integer.toString(i), (i+1)*10000))
-            {
-                for(int index = i-1; i==0; index--)
-                {
-                    hS.putInteger(Integer.toString(index), index+1);
-                }
-                hS.putInteger(Integer.toString(i), highscores[i]);
-                //isHighscore = true;
-            }
-            hS.flush();
+            hS.putInteger(Integer.toString(i), highscores[i]);
+            System.out.println(highscores[i]);
         }
+        hS.flush();
     }
 
     public boolean isIsHighscore() 
