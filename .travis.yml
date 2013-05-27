@@ -32,5 +32,5 @@ before_script:
 script:
 - "mvn -Pdesktop package -Pandroid package"
 after_success:
-- "travis-artifacts upload --path desktop/target/the_last_barcode_symphony-desktop-1.0-SNAPSHOT-jar-with-dependencies --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
-- "travis-artifacts upload --path android/target/the_last_barcode_symphony-android.apk --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
+- "travis-artifacts upload --path desktop/target/the_last_barcode_symphony-desktop-1.0-SNAPSHOT-jar-with-dependencies.jar --target-path $TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
+- "travis-artifacts upload --path android/target/the_last_barcode_symphony-android.apk --target-path $TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
