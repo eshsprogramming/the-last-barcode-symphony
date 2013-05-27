@@ -54,7 +54,7 @@ public class TheLastBarcodeSymphony extends Game
         getScreen().render(Gdx.graphics.getDeltaTime());
         FPS_LOGGER.log();
 
-        if(Gdx.input.isKeyPressed(Keys.P) && getScreen() == playScreen)
+        if(Gdx.input.isKeyPressed(Keys.ESCAPE) && getScreen() == playScreen)
         {
             setScreen(pauseScreen);
             Gdx.app.log(TAG, "Set screen to pause screen.");
