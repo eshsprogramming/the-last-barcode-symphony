@@ -17,13 +17,17 @@ public class MainMenu implements Screen
     public MainMenu(TheLastBarcodeSymphony game)
     {
         this.game = game;
+    }
+
+    public void create()
+    {
         this.spriteBatch = new SpriteBatch();
         playButton = new Button();
         quitButton = new Button();
         creditsButton = new Button();
-        playButton.create(100,0,"PlayButton.png",game.playScreen,game);
-        quitButton.create(200,0,"QuitButton.png",game.playScreen,game);
-        creditsButton.create(0,0,"CreditsButton.png",game.playScreen,game);
+        playButton.create(0,0,"PlayButton.png",game.playScreen,game);
+        quitButton.create(200,0,"QuitButton.png",game.quitScreen,game);
+        creditsButton.create(100,0,"CreditsButton.png",game.playScreen,game);
     }
 
     @Override

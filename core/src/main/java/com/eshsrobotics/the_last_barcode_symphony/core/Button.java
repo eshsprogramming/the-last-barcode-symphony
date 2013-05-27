@@ -10,8 +10,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.Texture;
 
 
-public class Button {
-
+public class Button
+{
     TheLastBarcodeSymphony tlbs;
     private Texture texture;
     private float shapeX;
