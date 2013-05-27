@@ -41,6 +41,7 @@ public class TheLastBarcodeSymphony extends Game
 
         music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
         music.play();
+        music.pause();
         Gdx.app.log(TAG, "Started playing music.");
 
         setScreen(mainMenu);
