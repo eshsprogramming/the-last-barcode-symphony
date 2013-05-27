@@ -2,6 +2,7 @@ package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.FPSLogger;
@@ -64,11 +65,10 @@ public class TheLastBarcodeSymphony extends Game
                 Gdx.app.log(TAG, "Set screen to pause screen.");
             }
         }
+    }
 
-        if(Gdx.input.isKeyPressed(Keys.ENTER) && getScreen() != losingScreen)
-        {
-            setScreen(playScreen);
-            Gdx.app.log(TAG, "Set screen to play screen.");
-        }
+    public void setTheScreen(Screen screen)
+    {
+        setScreen(screen);
     }
 }

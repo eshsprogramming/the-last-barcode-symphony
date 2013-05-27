@@ -3,15 +3,27 @@ package com.eshsrobotics.the_last_barcode_symphony.core;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainMenu implements Screen
 {
-
+    SpriteBatch spriteBatch;
     TheLastBarcodeSymphony game;
+    Button playButton;
+    Button quitButton;
+    Button creditsButton;
+
 
     public MainMenu(TheLastBarcodeSymphony game)
     {
         this.game = game;
+        this.spriteBatch = new SpriteBatch();
+        playButton = new Button();
+        quitButton = new Button();
+        creditsButton = new Button();
+        playButton.create(100,0,"PlayButton.png",game.playScreen,game);
+        quitButton.create(200,0,"QuitButton.png",game.playScreen,game);
+        creditsButton.create(0,0,"CreditsButton.png",game.playScreen,game);
     }
 
     @Override
@@ -19,6 +31,11 @@ public class MainMenu implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+
+        playButton.render(spriteBatch);
+        creditsButton.render(spriteBatch);
+        quitButton.render(spriteBatch);
+
     }
 
     @Override
