@@ -19,19 +19,18 @@ env:
   matrix:
   - ANDROID_SDKS=android-15   ANDROID_TARGET=android-11   ANDROID_ABI=armeabi
 before_install:
-  - sudo apt-get update -qq
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm
-    ia32-libs ia32-libs-multiarch; fi
-  - wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
-  - tar xzf android-sdk_r21.0.1-linux.tgz
-  - export ANDROID_HOME=$PWD/android-sdk-linux
-  - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
-  - android update sdk --filter platform-tools,android-15,extra-android-support,$ANDROID_SDKS
-  --no-ui --force
+- sudo apt-get update -qq
+- if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libgd2-xpm
+  ia32-libs ia32-libs-multiarch; fi
+- wget http://dl.google.com/android/android-sdk_r21.0.1-linux.tgz
+- tar xzf android-sdk_r21.0.1-linux.tgz
+- export ANDROID_HOME=$PWD/android-sdk-linux
+- export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+- android update sdk --filter platform-tools,android-15,extra-android-support,$ANDROID_SDKS --no-ui --force
 before_script:
-  - "gem install travis-artifacts"
+- "gem install travis-artifacts"
 script:
-  - "mvn -Pdesktop package -Pandroid package"
+- "mvn -Pdesktop package -Pandroid package"
 after_success:
-  - "travis-artifacts upload --path desktop/target/the_last_barcode_symphony-desktop-1.0-SNAPSHOT-jar-with-dependencies --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
-  - "travis-artifacts upload --path android/target/the_last_barcode_symphony-android.apk --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
+- "travis-artifacts upload --path desktop/target/the_last_barcode_symphony-desktop-1.0-SNAPSHOT-jar-with-dependencies --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
+- "travis-artifacts upload --path android/target/the_last_barcode_symphony-android.apk --target-path artifacts/$TRAVIS_BUILD_ID/$TRAVIS_JOB_ID"
