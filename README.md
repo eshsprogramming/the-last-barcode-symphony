@@ -2,3 +2,5 @@ The Last Barcode Symphony [![Build Status](https://travis-ci.org/eshsrobotics/th
 =========================
 
 The Last Barcode Symphony is a game about barcodes... doing something.
+
+![Screenshot](http://eshsrobotics.com/the-last-barcode-symphony/img/screenshot.png)
