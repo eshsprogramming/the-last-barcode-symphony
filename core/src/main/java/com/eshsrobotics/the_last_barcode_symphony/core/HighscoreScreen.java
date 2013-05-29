@@ -35,7 +35,7 @@ public class HighscoreScreen implements Screen
         font.draw(sprite, "Highscores", Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*0.875f);
         for(int i = 0; i <= 4; i++)
         {
-            font.draw(sprite, Integer.toString(i + 1) + ". " + Integer.toString(hSReader.getInteger(Integer.toString(i))), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight() - 45*i - 125);
+            font.draw(sprite, Integer.toString(i + 1) + ". " + Integer.toString(hSReader.getInteger(Integer.toString(4-i))), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight() - 45*i - 125);
         }
         sprite.end();
     }

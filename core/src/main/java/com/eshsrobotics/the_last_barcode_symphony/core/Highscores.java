@@ -19,12 +19,12 @@ public class Highscores
     {
         for(int i = 0; i <= 4; i++)
         {
-            highscores[i] = hS.getInteger(Integer.toString(i), (i+1)*10000);
+            highscores[i] = hS.getInteger(Integer.toString(i), 0);
             
             /*Note: For now, uncomment the two lines below and comment out the
             line above if you need to clear your highscores.*/
             
-            //hS.putInteger(Integer.toString(i), (i+1)*10000);
+            //hS.putInteger(Integer.toString(i), 0);
             //hS.flush();
         }
     }
