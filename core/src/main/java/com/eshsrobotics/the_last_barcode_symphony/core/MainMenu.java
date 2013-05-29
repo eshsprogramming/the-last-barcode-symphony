@@ -26,7 +26,7 @@ public class MainMenu implements Screen
         quitButton = new Button();
         highscoresButton = new Button();
         playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",game.playScreen,game);
-        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",game.playScreen,game);
+        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",game.highscoreScreen,game);
         quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",game.quitScreen,game);
     }
 
@@ -39,7 +39,6 @@ public class MainMenu implements Screen
         playButton.render(spriteBatch);
         highscoresButton.render(spriteBatch);
         quitButton.render(spriteBatch);
-
     }
 
     @Override
