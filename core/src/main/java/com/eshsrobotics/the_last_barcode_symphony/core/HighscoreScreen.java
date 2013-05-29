@@ -1,9 +1,11 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -15,6 +17,13 @@ public class HighscoreScreen implements Screen
     private BitmapFont font = new BitmapFont();
     private SpriteBatch sprite = new SpriteBatch();
     private Button backButton = new Button();
+    private Input input = Gdx.input;
+    private Texture texture = new Texture(Gdx.files.internal("ResetButton.png"));
+    
+    int x = input.getX(),
+        y = Gdx.graphics.getHeight() - input.getY(),
+        shapeX = (int)(Gdx.graphics.getWidth()*0.875)-90,
+        shapeY = (int)(Gdx.graphics.getHeight()/8);
 
     public HighscoreScreen(TheLastBarcodeSymphony game) 
     {
@@ -28,6 +37,9 @@ public class HighscoreScreen implements Screen
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         
+        x = input.getX();
+        y = Gdx.graphics.getHeight() - input.getY();
+        
         backButton.render(sprite);
         
         sprite.begin();
@@ -37,7 +49,17 @@ public class HighscoreScreen implements Screen
         {
             font.draw(sprite, Integer.toString(i + 1) + ". " + Integer.toString(hSReader.getInteger(Integer.toString(4-i))), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight() - 45*i - 125);
         }
+        sprite.draw(texture, shapeX, shapeY);
         sprite.end();
+        
+        if(input.isTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
+        {
+            for(int i = 0; i <= 4; i++)
+            {
+                hSReader.putInteger(Integer.toString(i), 0);
+                hSReader.flush();
+            }
+        }
     }
 
     @Override
