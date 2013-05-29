@@ -19,6 +19,7 @@ public class HighscoreScreen implements Screen
     private Button backButton = new Button();
     private Input input = Gdx.input;
     private Texture texture = new Texture(Gdx.files.internal("ResetButton.png"));
+    private Highscores highscore = Highscores.getInstance();
     
     int x = input.getX(),
         y = Gdx.graphics.getHeight() - input.getY(),
@@ -58,6 +59,7 @@ public class HighscoreScreen implements Screen
             {
                 hSReader.putInteger(Integer.toString(i), 0);
                 hSReader.flush();
+                highscore.loadHighscores();
             }
         }
     }
