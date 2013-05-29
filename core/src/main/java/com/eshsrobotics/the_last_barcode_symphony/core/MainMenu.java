@@ -11,7 +11,7 @@ public class MainMenu implements Screen
     TheLastBarcodeSymphony game;
     Button playButton;
     Button quitButton;
-    Button creditsButton;
+    Button highscoresButton;
 
 
     public MainMenu(TheLastBarcodeSymphony game)
@@ -24,10 +24,10 @@ public class MainMenu implements Screen
         this.spriteBatch = new SpriteBatch();
         playButton = new Button();
         quitButton = new Button();
-        creditsButton = new Button();
-        playButton.create(0,0,"PlayButton.png",game.playScreen,game);
-        quitButton.create(200,0,"QuitButton.png",game.quitScreen,game);
-        creditsButton.create(100,0,"CreditsButton.png",game.playScreen,game);
+        highscoresButton = new Button();
+        playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",game.playScreen,game);
+        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",game.playScreen,game);
+        quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",game.quitScreen,game);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class MainMenu implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
         playButton.render(spriteBatch);
-        creditsButton.render(spriteBatch);
+        highscoresButton.render(spriteBatch);
         quitButton.render(spriteBatch);
 
     }
