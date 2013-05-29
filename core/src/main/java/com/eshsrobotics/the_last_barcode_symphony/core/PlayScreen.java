@@ -1,7 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
@@ -13,12 +12,10 @@ public class PlayScreen implements Screen
 {
     private LifeMeter lifeMeter;
     private SpriteBatch batch;
-    //private NewShape redShape;
-    //private NewShape greenShape;
-    //private NewShape blueShape;
     private NewShape shapeA;
     private NewShape shapeB;
     private NewShape shapeC;
+    private NewShape shapeD;
     private Texture texturebg;
     private ParallaxBackground rbg;
     private TextureRegion paraBG;
@@ -54,6 +51,7 @@ public class PlayScreen implements Screen
         shapeA = new NewShape();
         shapeB = new NewShape();
         shapeC = new NewShape();
+        shapeD = new NewShape();
         
         batch = new SpriteBatch();
         
@@ -62,6 +60,8 @@ public class PlayScreen implements Screen
         shapeA.create();
         shapeB.create();
         shapeC.create();
+        shapeD.create();
+
     }
 
     @Override
@@ -80,6 +80,7 @@ public class PlayScreen implements Screen
         shapeA.render(delta);
         shapeB.render(delta);
         shapeC.render(delta);
+        shapeD.render(delta);
 
         score.render(delta);
         
@@ -111,7 +112,7 @@ public class PlayScreen implements Screen
         if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !theLastBarcodeSymphony.music.isPlaying())
         {
             theLastBarcodeSymphony.music.play();
-            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"playing music.");
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
         }
         else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && theLastBarcodeSymphony.music.isPlaying())
         {
@@ -147,5 +148,15 @@ public class PlayScreen implements Screen
     {
         // TODO Auto-generated method stub
         
+    }
+
+    public void reset()
+    {
+        score.setScore(0);
+        shapeA.reset();
+        shapeB.reset();
+        shapeC.reset();
+        shapeD.reset();
+        lifeCount.setLifeCount(3);
     }
 }

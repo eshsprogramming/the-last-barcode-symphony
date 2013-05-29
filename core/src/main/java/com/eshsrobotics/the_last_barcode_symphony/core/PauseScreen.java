@@ -1,7 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
@@ -10,29 +9,35 @@ import com.badlogic.gdx.graphics.GL10;
 public class PauseScreen implements Screen
 {
     TheLastBarcodeSymphony game;
-    private ShapeRenderer resumeButton = new ShapeRenderer();
-    private ShapeRenderer mainMenuButton = new ShapeRenderer();
+    SpriteBatch spriteBatch = new SpriteBatch();
+    Button resumeButton = new Button();
+    Button mainMenuButton = new Button();
+    Button quitButton = new Button();
+    Button restartButton = new Button();
 
     public PauseScreen(TheLastBarcodeSymphony game)
     {
         this.game = game;
     }
 
+    public void create()
+    {
+        resumeButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*7/8-36,"ResumeButton.png", game.playScreen, game);
+        mainMenuButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*5/8-36, "MainMenuButton.png", game.mainMenu, game);
+        quitButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()/8-36, "QuitButton.png", game.quitScreen, game);
+        restartButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*3/8-36, "RestartButton.png", game.resetScreen, game);
+    }
+
     @Override
     public void render(float delta)
     {
-        Gdx.gl.glClearColor(0, 0, 1, 1);
+        Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 
-        resumeButton.setColor(0, 1, 0, 1);
-        resumeButton.begin(ShapeType.Filled);
-        resumeButton.rect(Gdx.graphics.getWidth()/2-50, (3*Gdx.graphics.getHeight())/4-25, 100, 50);
-        resumeButton.end();
-
-        mainMenuButton.setColor(1, 0, 0, 1);
-        mainMenuButton.begin(ShapeType.Filled);
-        mainMenuButton.rect(Gdx.graphics.getWidth()/2-50, Gdx.graphics.getHeight()/4-25, 100, 50);
-        mainMenuButton.end();
+        resumeButton.render(spriteBatch);
+        mainMenuButton.render(spriteBatch);
+        quitButton.render(spriteBatch);
+        restartButton.render(spriteBatch);
     }
 
     @Override
