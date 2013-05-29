@@ -37,7 +37,6 @@ public class TheLastBarcodeSymphony extends Game
         resetScreen = new ResetScreen(this);
         Gdx.app.log(TAG, "Instantiated screens!");
 
-        playScreen.create();
         pauseScreen.create();
         getInstance().playScreen.create();
         getInstance().mainMenu.create();
