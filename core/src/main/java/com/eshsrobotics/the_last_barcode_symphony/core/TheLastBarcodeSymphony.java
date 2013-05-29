@@ -15,6 +15,7 @@ public class TheLastBarcodeSymphony extends Game
     PlayScreen playScreen;
     PauseScreen pauseScreen;
     QuitScreen quitScreen;
+    ResetScreen resetScreen;
     MainMenu mainMenu;
     LosingScreen losingScreen;
     HighscoreScreen highscoreScreen;
@@ -34,6 +35,7 @@ public class TheLastBarcodeSymphony extends Game
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
+        pauseScreen.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
 
         mainMenu.create();
@@ -49,28 +51,16 @@ public class TheLastBarcodeSymphony extends Game
         setScreen(mainMenu);
         Gdx.app.log(TAG, "Set screen to main menu.");
     }
-    
-    @Override
+
     public void render()
     {
         getScreen().render(Gdx.graphics.getDeltaTime());
         FPS_LOGGER.log();
 
-        if(getScreen() == pauseScreen)
+        if(Gdx.input.isKeyPressed(Keys.ESCAPE) && getScreen() == playScreen)
         {
-            if(Gdx.input.isKeyPressed(Keys.P))
-            {
-                setScreen(playScreen);
-                Gdx.app.log(TAG, "Set screen to play screen.");
-            }
-        }
-        else
-        {
-            if(Gdx.input.isKeyPressed(Keys.P) && getScreen() != mainMenu)
-            {
-                setScreen(pauseScreen);
-                Gdx.app.log(TAG, "Set screen to pause screen.");
-            }
+            setScreen(pauseScreen);
+            Gdx.app.log(TAG, "Set screen to pause screen.");
         }
     }
 

@@ -32,7 +32,7 @@ public class Button
         batch.begin();
         batch.draw(texture, shapeX, shapeY);
         batch.end();
-        if(input.isTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
+        if(input.justTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
         {
             tlbs.setTheScreen(screen);
         }
