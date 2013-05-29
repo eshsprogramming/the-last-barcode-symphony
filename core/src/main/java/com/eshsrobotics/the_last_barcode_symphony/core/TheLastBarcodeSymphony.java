@@ -17,6 +17,7 @@ public class TheLastBarcodeSymphony extends Game
     QuitScreen quitScreen;
     MainMenu mainMenu;
     LosingScreen losingScreen;
+    HighscoreScreen highscoreScreen;
 
     Music music;
     Highscores highscore;
@@ -29,6 +30,7 @@ public class TheLastBarcodeSymphony extends Game
         quitScreen = new QuitScreen(this);
         mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
+        highscoreScreen = new HighscoreScreen(this);
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
