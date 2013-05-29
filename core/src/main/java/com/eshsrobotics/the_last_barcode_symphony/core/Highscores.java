@@ -8,7 +8,7 @@ public class Highscores
     private Preferences hS = Gdx.app.getPreferences("Highscores");
     public static Highscores instance = new Highscores();
     private int[] highscores = new int[5];
-    private boolean isHighscore = false;
+    private int isHighscore = -1;
     
     public static Highscores getInstance()
     {
@@ -34,8 +34,12 @@ public class Highscores
                     highscores[index] = highscores[index+1];
                 }
                 highscores[i] = score;
-                isHighscore = true;
+                isHighscore = i;
                 break;
+            }
+            else
+            {
+                isHighscore = -1;
             }
         }
     }
@@ -50,12 +54,12 @@ public class Highscores
         hS.flush();
     }
 
-    public boolean isIsHighscore() 
+    public int getIsHighscore() 
     {
         return isHighscore;
     }
 
-    public void setIsHighscore(boolean isHighscore) 
+    public void setIsHighscore(int isHighscore) 
     {
         this.isHighscore = isHighscore;
     }
