@@ -105,8 +105,13 @@ public class PlayScreen implements Screen
 
         if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
-            TheLastBarcodeSymphony.getInstance().music.play();
+<<<<<<< HEAD
+            theLastBarcodeSymphony.music.play();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
+=======
+            TheLastBarcodeSymphony.getInstance().music.play();
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"playing music.");
+>>>>>>> Singleton-main-class
         }
         else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {

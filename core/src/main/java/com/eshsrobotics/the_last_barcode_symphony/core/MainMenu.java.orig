@@ -18,9 +18,15 @@ public class MainMenu implements Screen
         playButton = new Button();
         quitButton = new Button();
         highscoresButton = new Button();
+<<<<<<< HEAD
+        playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",game.playScreen,game);
+        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",game.highscoreScreen,game);
+        quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",game.quitScreen,game);
+=======
         playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
         highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
         quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",TheLastBarcodeSymphony.getInstance().quitScreen);
+>>>>>>> Singleton-main-class
     }
 
     @Override

@@ -9,17 +9,15 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Button
 {
-    TheLastBarcodeSymphony tlbs;
     private Texture texture;
     private float shapeX;
     private float shapeY;
     private Screen screen;
 
-    public void create(int x, int y, String texturePath, Screen sendScreen, TheLastBarcodeSymphony theLastBarcodeSymphony)
+    public void create(int x, int y, String texturePath, Screen sendScreen)
     {
         texture = new Texture(Gdx.files.internal(texturePath));
         screen = sendScreen;
-        tlbs = theLastBarcodeSymphony;
         shapeX = x;
         shapeY = y;
     }
@@ -34,7 +32,8 @@ public class Button
         batch.end();
         if(input.justTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
         {
-            tlbs.setTheScreen(screen);
+            TheLastBarcodeSymphony.getInstance().setScreen(screen);
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"Switched to" + screen.getClass().getSimpleName());
         }
     }
 

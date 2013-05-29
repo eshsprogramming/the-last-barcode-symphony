@@ -8,11 +8,18 @@ import com.badlogic.gdx.graphics.GL10;
 
 public class PauseScreen implements Screen
 {
+<<<<<<< HEAD
+    TheLastBarcodeSymphony game;
     SpriteBatch spriteBatch = new SpriteBatch();
     Button resumeButton = new Button();
     Button mainMenuButton = new Button();
     Button quitButton = new Button();
     Button restartButton = new Button();
+
+    public PauseScreen(TheLastBarcodeSymphony game)
+    {
+        this.game = game;
+    }
 
     public void create()
     {
@@ -22,6 +29,11 @@ public class PauseScreen implements Screen
         restartButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*3/8-36, "RestartButton.png", game.resetScreen, game);
     }
 
+=======
+    private ShapeRenderer resumeButton = new ShapeRenderer();
+    private ShapeRenderer mainMenuButton = new ShapeRenderer();
+
+>>>>>>> Singleton-main-class
     @Override
     public void render(float delta)
     {
