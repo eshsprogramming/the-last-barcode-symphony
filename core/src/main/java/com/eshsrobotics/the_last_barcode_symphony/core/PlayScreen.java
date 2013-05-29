@@ -61,6 +61,7 @@ public class PlayScreen implements Screen
         shapeB.create();
         shapeC.create();
         shapeD.create();
+
     }
 
     @Override
@@ -111,7 +112,7 @@ public class PlayScreen implements Screen
         if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !theLastBarcodeSymphony.music.isPlaying())
         {
             theLastBarcodeSymphony.music.play();
-            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"playing music.");
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
         }
         else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && theLastBarcodeSymphony.music.isPlaying())
         {
@@ -148,4 +149,15 @@ public class PlayScreen implements Screen
         // TODO Auto-generated method stub
         
     }
+
+    public void reset()
+    {
+        score.setScore(0);
+        shapeA.reset();
+        shapeB.reset();
+        shapeC.reset();
+        shapeD.reset();
+        lifeCount.setLifeCount(3);
+    }
+
 }

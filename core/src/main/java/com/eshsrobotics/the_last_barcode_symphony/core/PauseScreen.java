@@ -31,7 +31,7 @@ public class PauseScreen implements Screen
         resumeButton.create(100,0,"ResumeButton.png",game.playScreen,game);
         mainMenuButton.create(250,0,"MainMenuButton.png",game.mainMenu,game);
         quitButton.create(550,0,"QuitButton.png",game.quitScreen,game);
-        restartButton.create(400,0,"RestartButton.png",game.playScreen,game);
+        restartButton.create(400,0,"RestartButton.png",game.resetScreen,game);
     }
 
     @Override

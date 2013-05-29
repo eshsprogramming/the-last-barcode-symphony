@@ -1,7 +1,6 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 
@@ -45,7 +44,6 @@ public class NewShape
         {
             if(!touched)
             {
-                // Watch this...
                 score.setSpeed(tempSpeed/100);
                 score.setHeight(shapeHeight);
                 score.setWidth(shapeWidth);

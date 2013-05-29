@@ -15,6 +15,7 @@ public class TheLastBarcodeSymphony extends Game
     PlayScreen playScreen;
     PauseScreen pauseScreen;
     QuitScreen quitScreen;
+    ResetScreen resetScreen;
     MainMenu mainMenu;
     LosingScreen losingScreen;
 
@@ -29,6 +30,7 @@ public class TheLastBarcodeSymphony extends Game
         quitScreen = new QuitScreen(this);
         mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
+        resetScreen = new ResetScreen(this);
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
