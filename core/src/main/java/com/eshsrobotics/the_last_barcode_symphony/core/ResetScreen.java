@@ -6,12 +6,7 @@ import com.badlogic.gdx.graphics.GL10;
 
 public class ResetScreen implements Screen
 {
-    TheLastBarcodeSymphony game;
-
-    public ResetScreen(TheLastBarcodeSymphony game)
-    {
-        this.game = game;
-    }
+    TheLastBarcodeSymphony game = TheLastBarcodeSymphony.getInstance();
 
     @Override
     public void render(float delta)
@@ -20,7 +15,7 @@ public class ResetScreen implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         
         game.playScreen.reset();
-        game.setTheScreen(game.playScreen);
+        TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().playScreen);
     }
 
     @Override

@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class HighscoreScreen implements Screen
 {
 
-    private TheLastBarcodeSymphony game;
+    private TheLastBarcodeSymphony game = TheLastBarcodeSymphony.getInstance();
     private Preferences hSReader = Gdx.app.getPreferences("Highscores");
     private BitmapFont font = new BitmapFont();
     private SpriteBatch sprite = new SpriteBatch();
@@ -26,10 +26,9 @@ public class HighscoreScreen implements Screen
         shapeX = (int)(Gdx.graphics.getWidth()*0.875)-90,
         shapeY = (int)(Gdx.graphics.getHeight()/8);
 
-    public HighscoreScreen(TheLastBarcodeSymphony game) 
+    public void create()
     {
-        this.game = game;
-        backButton.create((Gdx.graphics.getWidth()/8), (Gdx.graphics.getHeight()/8), "BackButton.png", game.mainMenu, game);
+        backButton.create((Gdx.graphics.getWidth()/8), (Gdx.graphics.getHeight()/8), "BackButton.png", game.mainMenu);
     }
 
     @Override

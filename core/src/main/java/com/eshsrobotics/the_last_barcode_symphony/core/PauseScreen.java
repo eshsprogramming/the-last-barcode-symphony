@@ -13,13 +13,14 @@ public class PauseScreen implements Screen
     Button mainMenuButton = new Button();
     Button quitButton = new Button();
     Button restartButton = new Button();
+    TheLastBarcodeSymphony game = TheLastBarcodeSymphony.getInstance();
 
     public void create()
     {
-        resumeButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*7/8-36,"ResumeButton.png", game.playScreen, game);
-        mainMenuButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*5/8-36, "MainMenuButton.png", game.mainMenu, game);
-        quitButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()/8-36, "QuitButton.png", game.quitScreen, game);
-        restartButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*3/8-36, "RestartButton.png", game.resetScreen, game);
+        resumeButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*7/8-36,"ResumeButton.png", game.playScreen);
+        mainMenuButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*5/8-36, "MainMenuButton.png", game.mainMenu);
+        quitButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()/8-36, "QuitButton.png", game.quitScreen);
+        restartButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*3/8-36, "RestartButton.png", game.resetScreen);
     }
 
     @Override

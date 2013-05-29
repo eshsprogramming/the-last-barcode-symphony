@@ -28,18 +28,19 @@ public class TheLastBarcodeSymphony extends Game
     @Override
     public void create() 
     {
-        playScreen = new PlayScreen(this);
-        losingScreen = new LosingScreen(this);
-        quitScreen = new QuitScreen(this);
-        mainMenu = new MainMenu(this);
-        pauseScreen = new PauseScreen(this);
-        highscoreScreen = new HighscoreScreen(this);
-        resetScreen = new ResetScreen(this);
+        getInstance().playScreen = new PlayScreen();
+        getInstance().losingScreen = new LosingScreen();
+        getInstance().quitScreen = new QuitScreen();
+        getInstance().mainMenu = new MainMenu();
+        getInstance().pauseScreen = new PauseScreen();
+        getInstance().highscoreScreen = new HighscoreScreen();
+        getInstance().resetScreen = new ResetScreen();
         Gdx.app.log(TAG, "Instantiated screens!");
 
-        pauseScreen.create();
+        getInstance().pauseScreen.create();
         getInstance().playScreen.create();
         getInstance().mainMenu.create();
+        getInstance().highscoreScreen.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
 
         getInstance().highscore = Highscores.getInstance();
@@ -59,9 +60,9 @@ public class TheLastBarcodeSymphony extends Game
         getInstance().getScreen().render(Gdx.graphics.getDeltaTime());
         FPS_LOGGER.log();
 
-        if(Gdx.input.isKeyPressed(Keys.ESCAPE) && getScreen() == playScreen)
+        if(Gdx.input.isKeyPressed(Keys.ESCAPE) && getInstance().getScreen() == getInstance().playScreen)
         {
-            setScreen(pauseScreen);
+            getInstance().setScreen(getInstance().pauseScreen);
             Gdx.app.log(TAG, "Set screen to pause screen.");
         }
     }

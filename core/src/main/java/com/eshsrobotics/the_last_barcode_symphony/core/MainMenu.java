@@ -19,7 +19,7 @@ public class MainMenu implements Screen
         quitButton = new Button();
         highscoresButton = new Button();
         playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
-        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
+        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",TheLastBarcodeSymphony.getInstance().highscoreScreen);
         quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",TheLastBarcodeSymphony.getInstance().quitScreen);
     }
 
