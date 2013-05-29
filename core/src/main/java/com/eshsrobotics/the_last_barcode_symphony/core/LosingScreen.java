@@ -13,6 +13,12 @@ public class LosingScreen implements Screen
     private Score score = Score.getInstance();
     private Highscores highscore = Highscores.getInstance();
     private String isHighscore = "";
+    private Button mainMenu = new Button();
+    
+    public void create()
+    {
+        mainMenu.create(Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()/8, "MainMenuButton.png", TheLastBarcodeSymphony.getInstance().mainMenu);
+    }
 
     @Override
     public void render(float delta) 
@@ -29,11 +35,13 @@ public class LosingScreen implements Screen
             isHighscore = "You didn't get a highscore.";
         }
         
+        mainMenu.render(sprite);
+        
         sprite.begin();
-        font.draw(sprite, "You Lose!", 30, Gdx.graphics.getHeight() - 30);
-        font.draw(sprite, isHighscore, 30, Gdx.graphics.getHeight() - 60);
-        font.draw(sprite, "Your score was:", 30, Gdx.graphics.getHeight() - 90);
-        font.draw(sprite, Integer.toString((int)score.getScore()), 30, Gdx.graphics.getHeight() - 110);
+        font.draw(sprite, "You Lose!", Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*7/8);
+        font.draw(sprite, isHighscore, Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*6/8);
+        font.draw(sprite, "Your score was:", Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*5/8);
+        font.draw(sprite, Integer.toString((int)score.getScore()), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*9/16);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
     }
