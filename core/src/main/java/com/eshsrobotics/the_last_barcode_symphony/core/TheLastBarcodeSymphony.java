@@ -34,10 +34,10 @@ public class TheLastBarcodeSymphony extends Game
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
+        pauseScreen.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
 
         mainMenu.create();
-        pauseScreen.create();
 
         highscore = Highscores.getInstance();
         highscore.loadHighscores();

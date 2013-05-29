@@ -159,5 +159,4 @@ public class PlayScreen implements Screen
         shapeD.reset();
         lifeCount.setLifeCount(3);
     }
-
 }

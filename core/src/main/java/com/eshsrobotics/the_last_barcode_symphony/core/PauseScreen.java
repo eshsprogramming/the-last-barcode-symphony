@@ -9,11 +9,11 @@ import com.badlogic.gdx.graphics.GL10;
 public class PauseScreen implements Screen
 {
     TheLastBarcodeSymphony game;
-    SpriteBatch spriteBatch;
-    Button resumeButton;
-    Button mainMenuButton;
-    Button quitButton;
-    Button restartButton;
+    SpriteBatch spriteBatch = new SpriteBatch();
+    Button resumeButton = new Button();
+    Button mainMenuButton = new Button();
+    Button quitButton = new Button();
+    Button restartButton = new Button();
 
     public PauseScreen(TheLastBarcodeSymphony game)
     {
@@ -22,16 +22,10 @@ public class PauseScreen implements Screen
 
     public void create()
     {
-        this.spriteBatch = new SpriteBatch();
-        resumeButton = new Button();
-        mainMenuButton = new Button();
-        quitButton = new Button();
-        restartButton = new Button();
-
-        resumeButton.create(Gdx.graphics.getWidth()/2-45,400,"ResumeButton.png",game.playScreen,game);
-        mainMenuButton.create(Gdx.graphics.getWidth()-45/2,200,"MainMenuButton.png",game.mainMenu,game);
-        quitButton.create(Gdx.graphics.getWidth()/2-45,100,"QuitButton.png",game.quitScreen,game);
-        restartButton.create(Gdx.graphics.getWidth()/2-45,300,"RestartButton.png",game.resetScreen,game);
+        resumeButton.create(Gdx.graphics.getWidth()/2-45, 400,"ResumeButton.png", game.playScreen, game);
+        mainMenuButton.create(Gdx.graphics.getWidth()/2-45, 300, "MainMenuButton.png", game.mainMenu, game);
+        quitButton.create(Gdx.graphics.getWidth()/2-45, 100, "QuitButton.png", game.quitScreen, game);
+        restartButton.create(Gdx.graphics.getWidth()/2-45, 200, "RestartButton.png", game.resetScreen, game);
     }
 
     @Override

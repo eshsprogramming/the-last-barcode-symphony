@@ -18,9 +18,9 @@ public class ResetScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        
         game.playScreen.reset();
-        game.setScreen(game.playScreen);
-
+        game.setTheScreen(game.playScreen);
     }
 
     @Override
