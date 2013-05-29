@@ -14,10 +14,12 @@ public class LosingScreen implements Screen
     private Highscores highscore = Highscores.getInstance();
     private String isHighscore = "";
     private Button mainMenu = new Button();
+    private Button restart = new Button();
     
     public void create()
     {
         mainMenu.create(Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()/8, "MainMenuButton.png", TheLastBarcodeSymphony.getInstance().mainMenu);
+        restart.create(Gdx.graphics.getWidth()*7/8-90, Gdx.graphics.getHeight()/8, "RestartButton.png", TheLastBarcodeSymphony.getInstance().resetScreen);
     }
 
     @Override
@@ -36,6 +38,7 @@ public class LosingScreen implements Screen
         }
         
         mainMenu.render(sprite);
+        restart.render(sprite);
         
         sprite.begin();
         font.draw(sprite, "You Lose!", Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*7/8);
