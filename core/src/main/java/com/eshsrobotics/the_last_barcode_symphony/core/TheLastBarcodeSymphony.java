@@ -32,6 +32,7 @@ public class TheLastBarcodeSymphony extends Game
         mainMenu = new MainMenu(this);
         pauseScreen = new PauseScreen(this);
         highscoreScreen = new HighscoreScreen(this);
+        resetScreen = new ResetScreen(this);
         Gdx.app.log(TAG, "Instantiated screens!");
 
         playScreen.create();
