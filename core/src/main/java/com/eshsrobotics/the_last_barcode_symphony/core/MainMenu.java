@@ -27,7 +27,7 @@ public class MainMenu implements Screen
         creditsButton = new Button();
         playButton.create(0,0,"PlayButton.png",game.resetScreen,game);
         quitButton.create(200,0,"QuitButton.png",game.quitScreen,game);
-        creditsButton.create(100,0,"CreditsButton.png",game.playScreen,game);
+        creditsButton.create(100,0,"HighscoresButton.png",game.playScreen,game);
     }
 
     @Override
