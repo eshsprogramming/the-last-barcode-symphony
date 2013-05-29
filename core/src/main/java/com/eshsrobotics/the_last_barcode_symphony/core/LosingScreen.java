@@ -28,7 +28,11 @@ public class LosingScreen implements Screen
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
         
-        if(highscore.isIsHighscore() == true)
+        if(highscore.getIsHighscore() == 4)
+        {
+            isHighscore = "You got the #1 highscore!";
+        }
+        else if(highscore.getIsHighscore() < 4 && highscore.getIsHighscore() >= 0)
         {
             isHighscore = "You got a highscore!";
         }
