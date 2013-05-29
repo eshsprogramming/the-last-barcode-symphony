@@ -13,9 +13,6 @@ public class PlayScreen implements Screen
 {
     private LifeMeter lifeMeter;
     private SpriteBatch batch;
-    //private NewShape redShape;
-    //private NewShape greenShape;
-    //private NewShape blueShape;
     private NewShape shapeA;
     private NewShape shapeB;
     private NewShape shapeC;
@@ -24,15 +21,9 @@ public class PlayScreen implements Screen
     private TextureRegion paraBG;
     private Score score;
     private LifeCounter lifeCount;
-    private TheLastBarcodeSymphony theLastBarcodeSymphony;
     private Highscores highscore = Highscores.getInstance();
     private int oldLife = 0;
     private int timesChanged = 1;
-
-    public PlayScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
-    {
-        this.theLastBarcodeSymphony = theLastBarcodeSymphony;
-    }
 
     public void create()
     {
@@ -94,7 +85,7 @@ public class PlayScreen implements Screen
         {
             highscore.writeHighscore((int)(score.getScore()));
             highscore.saveHighscore();
-            theLastBarcodeSymphony.setScreen(theLastBarcodeSymphony.losingScreen);
+            TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().losingScreen);
 
         }
         
@@ -108,14 +99,14 @@ public class PlayScreen implements Screen
             }
         }
 
-        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !theLastBarcodeSymphony.music.isPlaying())
+        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
-            theLastBarcodeSymphony.music.play();
+            TheLastBarcodeSymphony.getInstance().music.play();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"playing music.");
         }
-        else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && theLastBarcodeSymphony.music.isPlaying())
+        else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
-            theLastBarcodeSymphony.music.pause();
+            TheLastBarcodeSymphony.getInstance().music.pause();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"stopping music.");
         }
     }

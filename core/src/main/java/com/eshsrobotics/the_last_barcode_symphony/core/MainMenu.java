@@ -8,16 +8,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class MainMenu implements Screen
 {
     SpriteBatch spriteBatch;
-    TheLastBarcodeSymphony game;
     Button playButton;
     Button quitButton;
     Button highscoresButton;
-
-
-    public MainMenu(TheLastBarcodeSymphony game)
-    {
-        this.game = game;
-    }
 
     public void create()
     {
@@ -25,9 +18,9 @@ public class MainMenu implements Screen
         playButton = new Button();
         quitButton = new Button();
         highscoresButton = new Button();
-        playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",game.playScreen,game);
-        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",game.playScreen,game);
-        quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",game.quitScreen,game);
+        playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
+        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",TheLastBarcodeSymphony.getInstance().playScreen);
+        quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",TheLastBarcodeSymphony.getInstance().quitScreen);
     }
 
     @Override

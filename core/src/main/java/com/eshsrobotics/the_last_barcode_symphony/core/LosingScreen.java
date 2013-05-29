@@ -8,18 +8,11 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class LosingScreen implements Screen
 {
-
-    private TheLastBarcodeSymphony theLastBarcodeSymphony;
     private BitmapFont font = new BitmapFont();
     private SpriteBatch sprite = new SpriteBatch();
     private Score score = Score.getInstance();
     private Highscores highscore = Highscores.getInstance();
     private String isHighscore = "";
-
-    public LosingScreen(TheLastBarcodeSymphony theLastBarcodeSymphony) 
-    {
-        this.theLastBarcodeSymphony = theLastBarcodeSymphony;
-    }
 
     @Override
     public void render(float delta) 

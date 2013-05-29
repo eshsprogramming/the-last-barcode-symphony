@@ -5,12 +5,6 @@ import com.badlogic.gdx.Screen;
 
 public class QuitScreen implements Screen
 {
-    TheLastBarcodeSymphony game;
-
-    public QuitScreen(TheLastBarcodeSymphony game)
-    {
-        this.game = game;
-    }
 
     public void create()
     {

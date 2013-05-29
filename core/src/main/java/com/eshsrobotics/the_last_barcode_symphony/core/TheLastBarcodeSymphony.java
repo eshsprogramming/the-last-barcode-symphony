@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.FPSLogger;
 
 public class TheLastBarcodeSymphony extends Game
 {
+    private static final TheLastBarcodeSymphony INSTANCE = new TheLastBarcodeSymphony();
+
     public static final String TAG = TheLastBarcodeSymphony.class.getSimpleName();
     public static final FPSLogger FPS_LOGGER = new FPSLogger();
 
@@ -24,56 +26,55 @@ public class TheLastBarcodeSymphony extends Game
     @Override
     public void create() 
     {
-        playScreen = new PlayScreen(this);
-        losingScreen = new LosingScreen(this);
-        quitScreen = new QuitScreen(this);
-        mainMenu = new MainMenu(this);
-        pauseScreen = new PauseScreen(this);
+        getInstance().playScreen = new PlayScreen();
+        getInstance().losingScreen = new LosingScreen();
+        getInstance().quitScreen = new QuitScreen();
+        getInstance().mainMenu = new MainMenu();
+        getInstance().pauseScreen = new PauseScreen();
         Gdx.app.log(TAG, "Instantiated screens!");
 
-        playScreen.create();
+        getInstance().playScreen.create();
+        getInstance().mainMenu.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
 
-        mainMenu.create();
+        getInstance().highscore = Highscores.getInstance();
+        getInstance().highscore.loadHighscores();
 
-        highscore = Highscores.getInstance();
-        highscore.loadHighscores();
-
-        music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
-        music.play();
-        music.pause();
+        getInstance().music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
+        getInstance().music.play();
+        getInstance().music.pause();
         Gdx.app.log(TAG, "Started playing music.");
 
-        setScreen(mainMenu);
+        getInstance().setScreen(getInstance().mainMenu);
         Gdx.app.log(TAG, "Set screen to main menu.");
     }
     
     @Override
     public void render()
     {
-        getScreen().render(Gdx.graphics.getDeltaTime());
+        getInstance().getScreen().render(Gdx.graphics.getDeltaTime());
         FPS_LOGGER.log();
 
-        if(getScreen() == pauseScreen)
+        if(getInstance().getScreen() == getInstance().pauseScreen)
         {
             if(Gdx.input.isKeyPressed(Keys.P))
             {
-                setScreen(playScreen);
+                getInstance().setScreen(getInstance().playScreen);
                 Gdx.app.log(TAG, "Set screen to play screen.");
             }
         }
         else
         {
-            if(Gdx.input.isKeyPressed(Keys.P) && getScreen() != mainMenu)
+            if(Gdx.input.isKeyPressed(Keys.P) && getInstance().getScreen() != getInstance().mainMenu)
             {
-                setScreen(pauseScreen);
+                getInstance().setScreen(getInstance().pauseScreen);
                 Gdx.app.log(TAG, "Set screen to pause screen.");
             }
         }
     }
 
-    public void setTheScreen(Screen screen)
+    public static TheLastBarcodeSymphony getInstance()
     {
-        setScreen(screen);
+        return INSTANCE;
     }
 }

@@ -9,14 +9,8 @@ import com.badlogic.gdx.graphics.GL10;
 
 public class PauseScreen implements Screen
 {
-    TheLastBarcodeSymphony game;
     private ShapeRenderer resumeButton = new ShapeRenderer();
     private ShapeRenderer mainMenuButton = new ShapeRenderer();
-
-    public PauseScreen(TheLastBarcodeSymphony game)
-    {
-        this.game = game;
-    }
 
     @Override
     public void render(float delta)
