@@ -28,10 +28,10 @@ public class PauseScreen implements Screen
         quitButton = new Button();
         restartButton = new Button();
 
-        resumeButton.create(100,0,"ResumeButton.png",game.playScreen,game);
-        mainMenuButton.create(250,0,"MainMenuButton.png",game.mainMenu,game);
-        quitButton.create(550,0,"QuitButton.png",game.quitScreen,game);
-        restartButton.create(400,0,"RestartButton.png",game.resetScreen,game);
+        resumeButton.create(Gdx.graphics.getWidth()/2-45,400,"ResumeButton.png",game.playScreen,game);
+        mainMenuButton.create(Gdx.graphics.getWidth()-45/2,200,"MainMenuButton.png",game.mainMenu,game);
+        quitButton.create(Gdx.graphics.getWidth()/2-45,100,"QuitButton.png",game.quitScreen,game);
+        restartButton.create(Gdx.graphics.getWidth()/2-45,300,"RestartButton.png",game.resetScreen,game);
     }
 
     @Override
