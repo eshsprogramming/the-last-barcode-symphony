@@ -18,9 +18,9 @@ public class MainMenu implements Screen
         playButton = new Button();
         quitButton = new Button();
         highscoresButton = new Button();
-        playButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)+64, "PlayButton.png",TheLastBarcodeSymphony.getInstance().resetScreen);
-        highscoresButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-36,"HighscoresButton.png",TheLastBarcodeSymphony.getInstance().highscoreScreen);
-        quitButton.create((Gdx.graphics.getWidth()/2)-45, (Gdx.graphics.getHeight()/2)-136, "QuitButton.png",TheLastBarcodeSymphony.getInstance().quitScreen);
+        playButton.create((Gdx.graphics.getWidth() / 2) - 45, (Gdx.graphics.getHeight() / 2) + 64, "PlayButton.png", TheLastBarcodeSymphony.getInstance().resetScreen);
+        highscoresButton.create((Gdx.graphics.getWidth() / 2) - 45, (Gdx.graphics.getHeight() / 2) - 36, "HighscoresButton.png", TheLastBarcodeSymphony.getInstance().highscoreScreen);
+        quitButton.create((Gdx.graphics.getWidth() / 2) - 45, (Gdx.graphics.getHeight() / 2) - 136, "QuitButton.png", TheLastBarcodeSymphony.getInstance().quitScreen);
     }
 
     @Override
@@ -28,7 +28,6 @@ public class MainMenu implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-
         playButton.render(spriteBatch);
         highscoresButton.render(spriteBatch);
         quitButton.render(spriteBatch);
@@ -37,34 +36,28 @@ public class MainMenu implements Screen
     @Override
     public void resize(int width, int height)
     {
-
     }
 
     @Override
     public void show()
     {
-
     }
 
     @Override
     public void hide()
     {
-
     }
 
     @Override
     public void pause()
     {
-
     }
 
     public void resume()
     {
-
     }
 
     public void dispose()
     {
-
     }
 }

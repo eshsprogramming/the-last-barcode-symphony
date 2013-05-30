@@ -20,8 +20,8 @@ public class NewShape
     private int shapeMinSize = 30;
     private Score score;
     private LifeCounter lifeCount;
-    
-    
+
+
     public void create()
     {
         score = Score.getInstance();
@@ -31,7 +31,7 @@ public class NewShape
 
     public void render(float delta)
     {
-        shape.setColor(shapeRed * color,shapeGreen * color,shapeBlue * color, 1);
+        shape.setColor(shapeRed * color, shapeGreen * color, shapeBlue * color, 1);
         shape.begin(ShapeType.Filled);
         shape.rect(shapeX, shapeY, shapeWidth, shapeHeight);
         shape.end();
@@ -44,11 +44,11 @@ public class NewShape
         {
             if(!touched)
             {
-                score.setSpeed(tempSpeed/100);
+                score.setSpeed(tempSpeed / 100);
                 score.setHeight(shapeHeight);
                 score.setWidth(shapeWidth);
                 score.setState(false);
-                lifeCount.setLifeCount(lifeCount.getLifeCount()-1);
+                lifeCount.setLifeCount(lifeCount.getLifeCount() - 1);
             }
 
             reset();
@@ -56,11 +56,11 @@ public class NewShape
 
         else
         {
-            shapeX += tempSpeed*delta;
+            shapeX += tempSpeed * delta;
 
             if(beingTouched())
             {
-                score.setSpeed(tempSpeed/100);
+                score.setSpeed(tempSpeed / 100);
                 score.setHeight(shapeHeight);
                 score.setWidth(shapeWidth);
                 score.setState(true);
@@ -82,13 +82,13 @@ public class NewShape
 
     public void reset()
     {
-        shapeHeight = (int)((Math.random() * (shapeMaxSize - shapeMinSize))+shapeMinSize);
-        shapeWidth = (int)((Math.random() * (shapeMaxSize - shapeMinSize))+shapeMinSize);
+        shapeHeight = (int)((Math.random() * (shapeMaxSize - shapeMinSize)) + shapeMinSize);
+        shapeWidth = (int)((Math.random() * (shapeMaxSize - shapeMinSize)) + shapeMinSize);
         shapeX = -shapeWidth;
         shapeY = (int)(Math.random() * (Gdx.graphics.getHeight() - shapeHeight));
         color = 0;
         touched = false;
-        speed = 175 + (float)(score.getScore()/75);
+        speed = 175 + (float)(score.getScore() / 75);
         tempSpeed = (float)((Math.random() * 100) + (speed - 50));
         shapeRed = (float)(Math.random());
         shapeGreen = (float)(Math.random());
@@ -106,6 +106,7 @@ public class NewShape
         {
             return true;
         }
+
         else
         {
             return false;

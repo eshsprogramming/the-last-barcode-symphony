@@ -13,7 +13,6 @@ public class ResetScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-        
         game.playScreen.reset();
         TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().playScreen);
     }
@@ -21,34 +20,28 @@ public class ResetScreen implements Screen
     @Override
     public void resize(int width, int height)
     {
-
     }
 
     @Override
     public void show()
     {
-
     }
 
     @Override
     public void hide()
     {
-
     }
 
     @Override
     public void pause()
     {
-
     }
 
     public void resume()
     {
-
     }
 
     public void dispose()
     {
-
     }
 }

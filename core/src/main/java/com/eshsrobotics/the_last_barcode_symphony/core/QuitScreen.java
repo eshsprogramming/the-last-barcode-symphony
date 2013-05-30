@@ -8,7 +8,6 @@ public class QuitScreen implements Screen
 
     public void create()
     {
-
     }
 
     @Override
@@ -20,34 +19,28 @@ public class QuitScreen implements Screen
     @Override
     public void resize(int width, int height)
     {
-
     }
 
     @Override
     public void show()
     {
-
     }
 
     @Override
     public void hide()
     {
-
     }
 
     @Override
     public void pause()
     {
-
     }
 
     public void resume()
     {
-
     }
 
     public void dispose()
     {
-
     }
 }

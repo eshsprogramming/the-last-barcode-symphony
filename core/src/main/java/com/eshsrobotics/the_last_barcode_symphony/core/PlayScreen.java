@@ -36,26 +36,19 @@ public class PlayScreen implements Screen
                                      800,
                                      600,
                                      new Vector2(150, 0));
-        
         score = Score.getInstance();
-        
         lifeCount = LifeCounter.getInstance();
         lifeMeter = new LifeMeter();
-
         shapeA = new NewShape();
         shapeB = new NewShape();
         shapeC = new NewShape();
         shapeD = new NewShape();
-        
         batch = new SpriteBatch();
-        
         lifeMeter.create();
-
         shapeA.create();
         shapeB.create();
         shapeC.create();
         shapeD.create();
-
     }
 
     @Override
@@ -68,36 +61,34 @@ public class PlayScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1); //White Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT); // Clear screen
-        
         rbg.render(delta);
-
         shapeA.render(delta);
         shapeB.render(delta);
         shapeC.render(delta);
         shapeD.render(delta);
-
         score.render(delta);
-        
         batch.begin();
+
         for(int i = lifeCount.getLifeCount(); i > 0; i--)
         {
             lifeMeter.render(delta, i, batch);
         }
+
         batch.end();
-        
+
         if(lifeCount.getLifeCount() <= 0)
         {
             highscore.writeHighscore((int)(score.getScore()));
             highscore.saveHighscore();
             TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().losingScreen);
-
         }
-        
+
         if(score.getScore() != 0)
         {
             oldLife = lifeCount.getLifeCount();
-            lifeCount.setLifeCount(lifeCount.getLifeCount() + (int)(score.getScore()/(25000*timesChanged)));
-            if(lifeCount.getLifeCount() == (oldLife+1))
+            lifeCount.setLifeCount(lifeCount.getLifeCount() + (int)(score.getScore() / (25000 * timesChanged)));
+
+            if(lifeCount.getLifeCount() == (oldLife + 1))
             {
                 timesChanged += 1;
             }
@@ -108,10 +99,11 @@ public class PlayScreen implements Screen
             TheLastBarcodeSymphony.getInstance().music.play();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
         }
+
         else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
             TheLastBarcodeSymphony.getInstance().music.pause();
-            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"stopping music.");
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "stopping music.");
         }
     }
 
@@ -131,17 +123,15 @@ public class PlayScreen implements Screen
     }
 
     @Override
-    public void show() 
+    public void show()
     {
         // TODO Auto-generated method stub
-        
     }
 
     @Override
-    public void hide() 
+    public void hide()
     {
         // TODO Auto-generated method stub
-        
     }
 
     public void reset()

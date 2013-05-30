@@ -26,14 +26,15 @@ public class Button
     {
         Input input = Gdx.input;
         int x = input.getX(),
-                y = Gdx.graphics.getHeight() - input.getY();
+            y = Gdx.graphics.getHeight() - input.getY();
         batch.begin();
         batch.draw(texture, shapeX, shapeY);
         batch.end();
+
         if(input.justTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
         {
             TheLastBarcodeSymphony.getInstance().setScreen(screen);
-            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(),"Switched to" + screen.getClass().getSimpleName());
+            Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "Switched to" + screen.getClass().getSimpleName());
         }
     }
 

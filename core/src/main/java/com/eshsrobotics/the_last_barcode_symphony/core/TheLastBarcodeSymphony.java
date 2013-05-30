@@ -26,7 +26,7 @@ public class TheLastBarcodeSymphony extends Game
     Highscores highscore;
 
     @Override
-    public void create() 
+    public void create()
     {
         getInstance().playScreen = new PlayScreen();
         getInstance().losingScreen = new LosingScreen();
@@ -36,22 +36,18 @@ public class TheLastBarcodeSymphony extends Game
         getInstance().highscoreScreen = new HighscoreScreen();
         getInstance().resetScreen = new ResetScreen();
         Gdx.app.log(TAG, "Instantiated screens!");
-
         getInstance().pauseScreen.create();
         getInstance().playScreen.create();
         getInstance().mainMenu.create();
         getInstance().highscoreScreen.create();
         getInstance().losingScreen.create();
         Gdx.app.log(TAG, "Called mysterious create method on appropriate screens.");
-
         getInstance().highscore = Highscores.getInstance();
         getInstance().highscore.loadHighscores();
-
         getInstance().music = Gdx.audio.newMusic(Gdx.files.internal("Beethoven5th.mp3"));
         getInstance().music.play();
         getInstance().music.pause();
         Gdx.app.log(TAG, "Started playing music.");
-
         getInstance().setScreen(getInstance().mainMenu);
         Gdx.app.log(TAG, "Set screen to main menu.");
     }

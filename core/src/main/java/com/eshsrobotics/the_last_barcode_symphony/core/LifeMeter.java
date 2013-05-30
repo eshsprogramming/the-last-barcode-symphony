@@ -8,7 +8,7 @@ public class LifeMeter
 {
     private Texture texture;
     int spriteX = 100;
-    int spriteY = Gdx.graphics.getHeight()-48;
+    int spriteY = Gdx.graphics.getHeight() - 48;
 
     public void create()
     {
@@ -17,7 +17,7 @@ public class LifeMeter
 
     public void render(float delta, int number, SpriteBatch batch)
     {
-        spriteX = Gdx.graphics.getWidth()-number*48;
+        spriteX = Gdx.graphics.getWidth() - number * 48;
         //batch.begin();
         batch.draw(texture, spriteX, spriteY);
         //batch.end();

@@ -17,10 +17,10 @@ public class PauseScreen implements Screen
 
     public void create()
     {
-        resumeButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*7/8-36,"ResumeButton.png", game.playScreen);
-        mainMenuButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*5/8-36, "MainMenuButton.png", game.mainMenu);
-        quitButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()/8-36, "QuitButton.png", game.quitScreen);
-        restartButton.create(Gdx.graphics.getWidth()/2-45, Gdx.graphics.getHeight()*3/8-36, "RestartButton.png", game.resetScreen);
+        resumeButton.create(Gdx.graphics.getWidth() / 2 - 45, Gdx.graphics.getHeight() * 7 / 8 - 36, "ResumeButton.png", game.playScreen);
+        mainMenuButton.create(Gdx.graphics.getWidth() / 2 - 45, Gdx.graphics.getHeight() * 5 / 8 - 36, "MainMenuButton.png", game.mainMenu);
+        quitButton.create(Gdx.graphics.getWidth() / 2 - 45, Gdx.graphics.getHeight() / 8 - 36, "QuitButton.png", game.quitScreen);
+        restartButton.create(Gdx.graphics.getWidth() / 2 - 45, Gdx.graphics.getHeight() * 3 / 8 - 36, "RestartButton.png", game.resetScreen);
     }
 
     @Override
@@ -28,7 +28,6 @@ public class PauseScreen implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-
         resumeButton.render(spriteBatch);
         mainMenuButton.render(spriteBatch);
         quitButton.render(spriteBatch);
@@ -38,35 +37,29 @@ public class PauseScreen implements Screen
     @Override
     public void resize(int width, int height)
     {
-
     }
 
     @Override
     public void show()
     {
-
     }
 
     @Override
     public void hide()
     {
-
     }
 
     @Override
     public void pause()
     {
-
     }
 
     public void resume()
     {
-
     }
 
     public void dispose()
     {
-
     }
 }
 

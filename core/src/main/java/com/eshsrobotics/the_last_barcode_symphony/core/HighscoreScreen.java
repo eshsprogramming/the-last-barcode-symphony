@@ -20,38 +20,37 @@ public class HighscoreScreen implements Screen
     private Input input = Gdx.input;
     private Texture texture = new Texture(Gdx.files.internal("ResetButton.png"));
     private Highscores highscore = Highscores.getInstance();
-    
+
     int x = input.getX(),
         y = Gdx.graphics.getHeight() - input.getY(),
-        shapeX = (int)(Gdx.graphics.getWidth()*0.875)-90,
-        shapeY = (int)(Gdx.graphics.getHeight()/8);
+        shapeX = (int)(Gdx.graphics.getWidth() * 0.875) - 90,
+        shapeY = (int)(Gdx.graphics.getHeight() / 8);
 
     public void create()
     {
-        backButton.create((Gdx.graphics.getWidth()/8), (Gdx.graphics.getHeight()/8), "BackButton.png", game.mainMenu);
+        backButton.create((Gdx.graphics.getWidth() / 8), (Gdx.graphics.getHeight() / 8), "BackButton.png", game.mainMenu);
     }
 
     @Override
-    public void render(float delta) 
+    public void render(float delta)
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-        
         x = input.getX();
         y = Gdx.graphics.getHeight() - input.getY();
-        
         backButton.render(sprite);
-        
         sprite.begin();
         font.setColor(0, 0, 0, 1.0f);
-        font.draw(sprite, "Highscores", Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*0.875f);
+        font.draw(sprite, "Highscores", Gdx.graphics.getWidth() / 8, Gdx.graphics.getHeight() * 0.875f);
+
         for(int i = 0; i <= 4; i++)
         {
-            font.draw(sprite, Integer.toString(i + 1) + ". " + Integer.toString(hSReader.getInteger(Integer.toString(4-i))), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight() - 45*i - 125);
+            font.draw(sprite, Integer.toString(i + 1) + ". " + Integer.toString(hSReader.getInteger(Integer.toString(4 - i))), Gdx.graphics.getWidth() / 8, Gdx.graphics.getHeight() - 45 * i - 125);
         }
+
         sprite.draw(texture, shapeX, shapeY);
         sprite.end();
-        
+
         if(input.isTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
         {
             for(int i = 0; i <= 4; i++)
@@ -64,39 +63,33 @@ public class HighscoreScreen implements Screen
     }
 
     @Override
-    public void resize(int width, int height) 
+    public void resize(int width, int height)
     {
-        
     }
 
     @Override
-    public void show() 
+    public void show()
     {
-        
     }
 
     @Override
-    public void hide() 
+    public void hide()
     {
-        
     }
 
     @Override
-    public void pause() 
+    public void pause()
     {
-        
     }
 
     @Override
-    public void resume() 
+    public void resume()
     {
-        
     }
 
     @Override
-    public void dispose() 
+    public void dispose()
     {
-        
     }
-    
+
 }
