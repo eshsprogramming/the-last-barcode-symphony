@@ -1,8 +1,23 @@
-/* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
-/* zurb.com */
-/* humanstxt.org */
+/* TEAM */
+
+  Project Manager: Zachary Latta
+  Contact: zchlatta@gmail.com
+  Twitter: @zachlatta
+  From: El Segundo, California
+
+  Technical Lead: Luke St. Regis
+
+  Programmer: Henry Smith
+
+  Programmer: Ian Hurd
+
+/* THANKS */
+
+  /* Foundation was made by ZURB, an interaction design and design strategy firm in Campbell, CA */
+  /* zurb.com */
+  /* humanstxt.org */
 
 /* SITE */
   Standards: HTML5, CSS3
   Components: jQuery, Orbit, Reveal
-  Software: Coda, Textmate, Git
+  Software: Vim, Coda, Textmate, Git
