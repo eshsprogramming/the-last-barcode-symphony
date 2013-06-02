@@ -10,7 +10,7 @@ Prerequisites
 * Compass
 * ZURB Foundation
 * Jekyll
-* Vagrant host box
+* Foreman
 
 ### Ruby
 
