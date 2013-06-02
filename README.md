@@ -32,13 +32,14 @@ I recommend installing Ruby through [RVM](https://rvm.io/), but you're going to 
     $ gem install jekyll
 
 
-Generate the Site
------------------
+### Foreman
 
-    $ jekyll serve
+    $ gem install foreman
+
+
+Generate and Serve the Site
+---------------------------
+
+    $ foreman start
 
 You can now access the site at [http://localhost:4000](http://localhost:4000).
-
-You're going to need to regenerate the site each time you change any of the source files. If you want Jekyll to automatically regenerate files when they're changed run the following:
-
-    $ jekyll serve --watch
