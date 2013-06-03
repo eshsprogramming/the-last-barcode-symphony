@@ -51,6 +51,8 @@ public class LosingScreen implements Screen
         font.draw(sprite, Integer.toString((int)score.getScore()), Gdx.graphics.getWidth()/8, Gdx.graphics.getHeight()*9/16);
         font.setColor(0, 0, 0, 1.0f);
         sprite.end();
+
+        TheLastBarcodeSymphony.getInstance().music.stop();
     }
 
     @Override

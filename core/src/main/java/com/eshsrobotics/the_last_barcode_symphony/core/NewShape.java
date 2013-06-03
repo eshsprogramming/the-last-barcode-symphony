@@ -108,7 +108,7 @@ public class NewShape
         }
         else
         {
-            return false;
+            return true;
         }
     }
 }

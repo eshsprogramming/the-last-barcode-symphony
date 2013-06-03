@@ -16,6 +16,8 @@ public class ResetScreen implements Screen
         
         game.playScreen.reset();
         TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().playScreen);
+
+        TheLastBarcodeSymphony.getInstance().music.stop();
     }
 
     @Override
