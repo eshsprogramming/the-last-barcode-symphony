@@ -46,11 +46,15 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
+
+// Colors
+
 $orange: #be633f;
 $green: #9abe3f;
 $teal: #3f9abe;
 $light-teal: #5ab3d6;
 $purple: #633fbe;
+
 
 .top-bar {
   margin-bottom: 0;
@@ -58,10 +62,15 @@ $purple: #633fbe;
 
 .heading {
   @include panel($teal, 150px);
+  color: #fff;
 
   h1 {
     font-size: 72px;
-    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  small {
+    font-size: 24px;
   }
 }
 
