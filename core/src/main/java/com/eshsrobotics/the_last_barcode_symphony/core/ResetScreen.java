@@ -15,6 +15,8 @@ public class ResetScreen implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         game.playScreen.reset();
         TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().playScreen);
+
+        TheLastBarcodeSymphony.getInstance().music.stop();
     }
 
     @Override

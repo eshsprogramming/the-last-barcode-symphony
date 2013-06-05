@@ -32,6 +32,8 @@ public class PauseScreen implements Screen
         mainMenuButton.render(spriteBatch);
         quitButton.render(spriteBatch);
         restartButton.render(spriteBatch);
+
+        TheLastBarcodeSymphony.getInstance().music.pause();
     }
 
     @Override

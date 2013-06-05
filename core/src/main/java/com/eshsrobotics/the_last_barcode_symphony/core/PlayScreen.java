@@ -1,6 +1,7 @@
 package com.eshsrobotics.the_last_barcode_symphony.core;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.Texture;
@@ -94,16 +95,21 @@ public class PlayScreen implements Screen
             }
         }
 
-        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && !TheLastBarcodeSymphony.getInstance().music.isPlaying())
+        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched() || shapeD.isTouched()) && !TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
             TheLastBarcodeSymphony.getInstance().music.play();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
         }
 
-        else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
+        else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched() || shapeD.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
             TheLastBarcodeSymphony.getInstance().music.pause();
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "stopping music.");
+        }
+
+        if(Gdx.input.isKeyPressed(Input.Keys.NUM_1))
+        {
+            lifeCount.setLifeCount(0);
         }
     }
 
