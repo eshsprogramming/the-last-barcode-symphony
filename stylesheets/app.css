@@ -6723,48 +6723,136 @@ a.th {
   border-radius: 3px;
 }
 
-/* line 52, ../sass/app.scss */
+/* line 55, ../sass/app.scss */
 .top-bar {
   margin-bottom: 0;
 }
 
-/* line 56, ../sass/app.scss */
-.heading {
+/* line 59, ../sass/app.scss */
+.heading, .heading-home, .heading-about, .heading-gallery, .heading-download {
   border-style: solid;
   border-width: 1px;
-  border-color: #34939e;
+  border-color: #327b98;
   margin-bottom: 1.25em;
   padding: 150px;
-  background: #44b4c1;
+  background: #3f9abe;
 }
-/* line 44, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
-.heading h1, .heading h2, .heading h3, .heading h4, .heading h5, .heading h6, .heading p {
-  color: #333333;
+/* line 45, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading h1, .heading-home h1, .heading-about h1, .heading-gallery h1, .heading-download h1, .heading h2, .heading-home h2, .heading-about h2, .heading-gallery h2, .heading-download h2, .heading h3, .heading-home h3, .heading-about h3, .heading-gallery h3, .heading-download h3, .heading h4, .heading-home h4, .heading-about h4, .heading-gallery h4, .heading-download h4, .heading h5, .heading-home h5, .heading-about h5, .heading-gallery h5, .heading-download h5, .heading h6, .heading-home h6, .heading-about h6, .heading-gallery h6, .heading-download h6, .heading p, .heading-home p, .heading-about p, .heading-gallery p, .heading-download p {
+  color: white;
 }
 /* line 48, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
-.heading > :first-child {
+.heading > :first-child, .heading-home > :first-child, .heading-about > :first-child, .heading-gallery > :first-child, .heading-download > :first-child {
   margin-top: 0;
 }
 /* line 49, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
-.heading > :last-child {
+.heading > :last-child, .heading-home > :last-child, .heading-about > :last-child, .heading-gallery > :last-child, .heading-download > :last-child {
   margin-bottom: 0;
 }
 /* line 52, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
-.heading h1, .heading h2, .heading h3, .heading h4, .heading h5, .heading h6 {
+.heading h1, .heading-home h1, .heading-about h1, .heading-gallery h1, .heading-download h1, .heading h2, .heading-home h2, .heading-about h2, .heading-gallery h2, .heading-download h2, .heading h3, .heading-home h3, .heading-about h3, .heading-gallery h3, .heading-download h3, .heading h4, .heading-home h4, .heading-about h4, .heading-gallery h4, .heading-download h4, .heading h5, .heading-home h5, .heading-about h5, .heading-gallery h5, .heading-download h5, .heading h6, .heading-home h6, .heading-about h6, .heading-gallery h6, .heading-download h6 {
   line-height: 1;
   margin-bottom: 0.625em;
 }
 /* line 54, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
-.heading h1.subheader, .heading h2.subheader, .heading h3.subheader, .heading h4.subheader, .heading h5.subheader, .heading h6.subheader {
+.heading h1.subheader, .heading-home h1.subheader, .heading-about h1.subheader, .heading-gallery h1.subheader, .heading-download h1.subheader, .heading h2.subheader, .heading-home h2.subheader, .heading-about h2.subheader, .heading-gallery h2.subheader, .heading-download h2.subheader, .heading h3.subheader, .heading-home h3.subheader, .heading-about h3.subheader, .heading-gallery h3.subheader, .heading-download h3.subheader, .heading h4.subheader, .heading-home h4.subheader, .heading-about h4.subheader, .heading-gallery h4.subheader, .heading-download h4.subheader, .heading h5.subheader, .heading-home h5.subheader, .heading-about h5.subheader, .heading-gallery h5.subheader, .heading-download h5.subheader, .heading h6.subheader, .heading-home h6.subheader, .heading-about h6.subheader, .heading-gallery h6.subheader, .heading-download h6.subheader {
   line-height: 1.4;
 }
-/* line 59, ../sass/app.scss */
-.heading h1 {
+/* line 62, ../sass/app.scss */
+.heading h1, .heading-home h1, .heading-about h1, .heading-gallery h1, .heading-download h1 {
   font-size: 72px;
   color: #fff;
 }
 
-/* line 65, ../sass/app.scss */
-.content {
-  text-size: 18px;
+/* line 72, ../sass/app.scss */
+.heading-about {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4f3298;
+  margin-bottom: 1.25em;
+  padding: 150px;
+  background: #633fbe;
+}
+/* line 45, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-about h1, .heading-about h2, .heading-about h3, .heading-about h4, .heading-about h5, .heading-about h6, .heading-about p {
+  color: white;
+}
+/* line 48, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-about > :first-child {
+  margin-top: 0;
+}
+/* line 49, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-about > :last-child {
+  margin-bottom: 0;
+}
+/* line 52, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-about h1, .heading-about h2, .heading-about h3, .heading-about h4, .heading-about h5, .heading-about h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 54, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-about h1.subheader, .heading-about h2.subheader, .heading-about h3.subheader, .heading-about h4.subheader, .heading-about h5.subheader, .heading-about h6.subheader {
+  line-height: 1.4;
+}
+
+/* line 78, ../sass/app.scss */
+.heading-gallery {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #7b9832;
+  margin-bottom: 1.25em;
+  padding: 150px;
+  background: #9abe3f;
+}
+/* line 45, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-gallery h1, .heading-gallery h2, .heading-gallery h3, .heading-gallery h4, .heading-gallery h5, .heading-gallery h6, .heading-gallery p {
+  color: white;
+}
+/* line 48, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-gallery > :first-child {
+  margin-top: 0;
+}
+/* line 49, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-gallery > :last-child {
+  margin-bottom: 0;
+}
+/* line 52, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-gallery h1, .heading-gallery h2, .heading-gallery h3, .heading-gallery h4, .heading-gallery h5, .heading-gallery h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 54, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-gallery h1.subheader, .heading-gallery h2.subheader, .heading-gallery h3.subheader, .heading-gallery h4.subheader, .heading-gallery h5.subheader, .heading-gallery h6.subheader {
+  line-height: 1.4;
+}
+
+/* line 84, ../sass/app.scss */
+.heading-download {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #984f32;
+  margin-bottom: 1.25em;
+  padding: 150px;
+  background: #be633f;
+}
+/* line 45, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-download h1, .heading-download h2, .heading-download h3, .heading-download h4, .heading-download h5, .heading-download h6, .heading-download p {
+  color: white;
+}
+/* line 48, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-download > :first-child {
+  margin-top: 0;
+}
+/* line 49, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-download > :last-child {
+  margin-bottom: 0;
+}
+/* line 52, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-download h1, .heading-download h2, .heading-download h3, .heading-download h4, .heading-download h5, .heading-download h6 {
+  line-height: 1;
+  margin-bottom: 0.625em;
+}
+/* line 54, ../../../.rvm/gems/ruby-2.0.0-p0@tlbs/gems/zurb-foundation-4.2.1/scss/foundation/components/_panels.scss */
+.heading-download h1.subheader, .heading-download h2.subheader, .heading-download h3.subheader, .heading-download h4.subheader, .heading-download h5.subheader, .heading-download h6.subheader {
+  line-height: 1.4;
 }

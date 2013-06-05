@@ -46,8 +46,11 @@
 // @import "foundation/components/tooltips";
 // @import "foundation/components/dropdown";
 
-$teal: #44b4c1;
-$cream: #eaf2fa;
+$orange: #be633f;
+$green: #9abe3f;
+$teal: #3f9abe;
+$light-teal: #5ab3d6;
+$purple: #633fbe;
 
 .top-bar {
   margin-bottom: 0;
@@ -62,6 +65,24 @@ $cream: #eaf2fa;
   }
 }
 
-.content {
-  text-size: 18px;
+.heading-home {
+  @extend .heading;
+}
+
+.heading-about {
+  @extend .heading;
+
+  @include panel($purple, 150px);
+}
+
+.heading-gallery {
+  @extend .heading;
+
+  @include panel($green, 150px);
+}
+
+.heading-download {
+  @extend .heading;
+
+  @include panel($orange, 150px);
 }
