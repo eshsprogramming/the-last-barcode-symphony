@@ -3,7 +3,9 @@ package com.eshsrobotics.the_last_barcode_symphony.core;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
 public class MainMenu implements Screen
 {
@@ -11,10 +13,12 @@ public class MainMenu implements Screen
     Button playButton;
     Button quitButton;
     Button highscoresButton;
+    Texture paraBG;
 
     public void create()
     {
         this.spriteBatch = new SpriteBatch();
+        paraBG = new Texture(Gdx.files.internal("BGBC.png"));
         playButton = new Button();
         quitButton = new Button();
         highscoresButton = new Button();
@@ -28,6 +32,9 @@ public class MainMenu implements Screen
     {
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        spriteBatch.begin();
+        spriteBatch.draw(paraBG, 0, 0);
+        spriteBatch.end();
         playButton.render(spriteBatch);
         highscoresButton.render(spriteBatch);
         quitButton.render(spriteBatch);
