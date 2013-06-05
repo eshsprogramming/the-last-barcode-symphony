@@ -17,24 +17,11 @@ Prerequisites
 I recommend installing Ruby through [RVM](https://rvm.io/), but you're going to have a lot of fun doing that if you're on Windows. If you're on Windows you should probably just use the [RubyInstaller](http://rubyinstaller.org/).
 
 
-### Compass
+### Gems
 
-    $ gem install compass
+    $ bundle install
 
-
-### ZURB Foundation
-
-    $ gem install zurb-foundation
-
-
-### Jekyll
-
-    $ gem install jekyll
-
-
-### Foreman
-
-    $ gem install foreman
+That was easy!
 
 
 Generate and Serve the Site
