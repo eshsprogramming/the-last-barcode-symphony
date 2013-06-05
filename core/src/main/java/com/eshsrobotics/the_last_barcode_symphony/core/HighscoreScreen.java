@@ -20,6 +20,7 @@ public class HighscoreScreen implements Screen
     private Input input = Gdx.input;
     private Texture texture = new Texture(Gdx.files.internal("ResetButton.png"));
     private Highscores highscore = Highscores.getInstance();
+    private Texture paraBG;
 
     int x = input.getX(),
         y = Gdx.graphics.getHeight() - input.getY(),
@@ -29,6 +30,7 @@ public class HighscoreScreen implements Screen
     public void create()
     {
         backButton.create((Gdx.graphics.getWidth() / 8), (Gdx.graphics.getHeight() / 8), "BackButton.png", game.mainMenu);
+        paraBG = new Texture(Gdx.files.internal("BGBC.png"));
     }
 
     @Override
@@ -38,8 +40,8 @@ public class HighscoreScreen implements Screen
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         x = input.getX();
         y = Gdx.graphics.getHeight() - input.getY();
-        backButton.render(sprite);
         sprite.begin();
+        sprite.draw(paraBG, 0 ,0);
         font.setColor(0, 0, 0, 1.0f);
         font.draw(sprite, "Highscores", Gdx.graphics.getWidth() / 8, Gdx.graphics.getHeight() * 0.875f);
 
@@ -50,6 +52,8 @@ public class HighscoreScreen implements Screen
 
         sprite.draw(texture, shapeX, shapeY);
         sprite.end();
+        
+        backButton.render(sprite);
 
         if(input.isTouched() && x <= (shapeX + texture.getWidth()) && x >= shapeX && y <= (shapeY + texture.getHeight()) && y >= shapeY)
         {
