@@ -81,6 +81,7 @@ public class PlayScreen implements Screen
         {
             highscore.writeHighscore((int)(score.getScore()));
             highscore.saveHighscore();
+            timesChanged = 1;
             TheLastBarcodeSymphony.getInstance().setScreen(TheLastBarcodeSymphony.getInstance().losingScreen);
         }
 
