@@ -96,15 +96,23 @@ public class PlayScreen implements Screen
             }
         }
 
-        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched() || shapeD.isTouched()) && !TheLastBarcodeSymphony.getInstance().music.isPlaying())
+        if((shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched() || shapeD.isTouched()) && (!TheLastBarcodeSymphony.getInstance().music.isPlaying() || TheLastBarcodeSymphony.getInstance().music.getVolume() < 1))
         {
             TheLastBarcodeSymphony.getInstance().music.play();
+            if (TheLastBarcodeSymphony.getInstance().music.getVolume() != 1)
+            {
+                TheLastBarcodeSymphony.getInstance().music.setVolume(TheLastBarcodeSymphony.getInstance().music.getVolume()+0.1f);
+            }
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "playing music.");
         }
 
         else if(!(shapeA.isTouched() || shapeB.isTouched() || shapeC.isTouched() || shapeD.isTouched()) && TheLastBarcodeSymphony.getInstance().music.isPlaying())
         {
-            TheLastBarcodeSymphony.getInstance().music.pause();
+            TheLastBarcodeSymphony.getInstance().music.setVolume(TheLastBarcodeSymphony.getInstance().music.getVolume()-0.1f);
+            if (TheLastBarcodeSymphony.getInstance().music.getVolume() == 0)
+            {
+                TheLastBarcodeSymphony.getInstance().music.pause();
+            }
             Gdx.app.log(TheLastBarcodeSymphony.class.getSimpleName(), "stopping music.");
         }
 
