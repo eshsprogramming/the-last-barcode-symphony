@@ -25,6 +25,7 @@ public class PlayScreen implements Screen
     private Highscores highscore = Highscores.getInstance();
     private int oldLife = 0;
     private int timesChanged = 1;
+    private Button pauseButton;
 
     public void create()
     {
@@ -50,6 +51,8 @@ public class PlayScreen implements Screen
         shapeB.create();
         shapeC.create();
         shapeD.create();
+        pauseButton = new Button();
+        pauseButton.create(30, 30, "PauseButton.png", TheLastBarcodeSymphony.getInstance().pauseScreen);
     }
 
     @Override
@@ -68,6 +71,7 @@ public class PlayScreen implements Screen
         shapeC.render(delta);
         shapeD.render(delta);
         score.render(delta);
+        pauseButton.render(batch);
         batch.begin();
 
         for(int i = lifeCount.getLifeCount(); i > 0; i--)
